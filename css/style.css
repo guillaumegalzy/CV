@@ -1,26 +1,29 @@
 /** Choix font */
-@font-face {
-    font-family: 'Raleway Black';
-    src : url(./fonts/Raleway-Black.ttf) format('truetype');
+    @font-face {
+        font-family: 'Raleway Black';
+        src : url(./fonts/Raleway-Black.ttf) format('truetype');
 
-    font-family: 'Montserrat Light';
-    src : url(./fonts/Montserrat-Light.ttf) format('truetype');
+        font-family: 'Montserrat Light';
+        src : url(./fonts/Montserrat-Light.ttf) format('truetype');
 
-    font-family: 'Montserrat Regular';
-    src : url(./fonts/Montserrat-Regular.ttf) format('truetype');
-}
+        font-family: 'Montserrat Regular';
+        src : url(./fonts/Montserrat-Regular.ttf) format('truetype');
+    }
 
-.font1 {
-    font-family: 'Raleway Heavy',sans-serif;
-}
+    .font1 {
+        font-family: 'Raleway Heavy',sans-serif;
+    }
 
-.font2{
-    font-family: 'Montserrat Regular',sans-serif;
-}
+    .font2{
+        font-family: 'Montserrat Regular',sans-serif;
+    }
 
-.font3{
-    font-family: 'Montserrat Light',sans-serif;
-}
+    .font3{
+        font-family: 'Montserrat Light',sans-serif;
+    }
+/** */
+/** */
+/** */
 
 /** Création palette de couleur */
 .couleur1{
@@ -31,6 +34,10 @@
     color: #494953;
 }
 
+.couleur3{
+    color: #ffffff;
+}
+
 /** Ecrasement de tous les attributs par défauts */
 html {
    box-sizing: border-box;
@@ -39,13 +46,27 @@ html {
 }
 
 /** Organistion de la page */
-.name {
-    font-size : 12em;
-    text-align: center;
-    margin-bottom: 10%;
-    margin-top: 5%;
-}
 
+/**  HEADER    */
+/**            */
+    header{
+        background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-;
+        height: 40vh;
+    }
+    
+    header h2{
+        text-align: center;
+
+    }
+/***/
+/***/
+
+
+/**  NAVBAR    */
+/**            */
 nav {
     display: flex;
     width: 100%;
@@ -65,16 +86,24 @@ footer {
     flex-direction: row;
     justify-content: center;
 }
+/***/
+/***/
 
-footer img{
-    max-height: 50px;
-    width: auto;
-    margin: 5px 10px 5px 10px;
-}
 
-footer img:hover{
-    transform: scale(1.2);
-}
+/**  FOOTER    */
+/**            */
+    footer img{
+        max-height: 50px;
+        width: auto;
+        margin: 5px 10px 5px 10px;
+    }
+
+    footer img:hover{
+        transform: scale(1.2);
+    }
+/***/
+/***/
+
 
 /**                    */
 /**  SVG Nom Prénom    */
@@ -82,6 +111,7 @@ footer img:hover{
 
 #SVGname text{
     stroke-width: 3;
+    stroke-linecap: round; /*? extrémités des bordures arrondies */
     font-size : 150px;
     animation: textAnimate 3s ease-in-out;
     animation-delay: 0.5s;
@@ -93,16 +123,15 @@ footer img:hover{
     0%{
         stroke: #ff5656;
         stroke-dasharray: 0%, 100%; 
-        stroke-dashoffset: 20%;   
+        stroke-dashoffset: 30%;   
         fill: transparent;
         }
 
-    80%{
+    60%{
         stroke: #ff5656;
         fill: transparent;
-
     }
-
+    
     100%{
         stroke: #ff5656;
         fill: #ff5656;
@@ -110,3 +139,9 @@ footer img:hover{
         stroke-dashoffset: 0%;
     }
 }
+
+/***/
+/***/
+/***/
+
+
