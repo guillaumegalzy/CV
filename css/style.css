@@ -67,25 +67,12 @@ html {
 
 /**  NAVBAR    */
 /**            */
-nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+.navbar nav{
+    background-color: #ffffff;
     font-variant-caps: small-caps;
-    margin: 20px;
+    justify-content: space-between;
 }
 
-nav a {
-    font: bolder;
-    font-size: 2em;
-}
-
-footer {
-    background-color : gray;
-    display : flex;
-    flex-direction: row;
-    justify-content: center;
-}
 /***/
 /***/
 
@@ -101,6 +88,13 @@ footer {
     footer img:hover{
         transform: scale(1.2);
     }
+
+    footer {
+        background-color : gray;
+        display : flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 /***/
 /***/
 
@@ -112,7 +106,7 @@ footer {
 #SVGname text{
     stroke-width: 3;
     stroke-linecap: round; /*? extrémités des bordures arrondies */
-    font-size : 150px;
+    font-size : 110px;
     animation: textAnimate 3s ease-in-out;
     animation-delay: 0.5s;
     animation-fill-mode: forwards;
