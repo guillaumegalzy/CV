@@ -1,0 +1,112 @@
+/** Choix font */
+@font-face {
+    font-family: 'Raleway Black';
+    src : url(./fonts/Raleway-Black.ttf) format('truetype');
+
+    font-family: 'Montserrat Light';
+    src : url(./fonts/Montserrat-Light.ttf) format('truetype');
+
+    font-family: 'Montserrat Regular';
+    src : url(./fonts/Montserrat-Regular.ttf) format('truetype');
+}
+
+.font1 {
+    font-family: 'Raleway Heavy',sans-serif;
+}
+
+.font2{
+    font-family: 'Montserrat Regular',sans-serif;
+}
+
+.font3{
+    font-family: 'Montserrat Light',sans-serif;
+}
+
+/** Création palette de couleur */
+.couleur1{
+    color: #ff5656;
+}
+
+.couleur2{
+    color: #494953;
+}
+
+/** Ecrasement de tous les attributs par défauts */
+html {
+   box-sizing: border-box;
+   margin : 0px;
+   padding: 0px;
+}
+
+/** Organistion de la page */
+.name {
+    font-size : 12em;
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-variant-caps: small-caps;
+    margin: 20px;
+}
+
+nav a {
+    font: bolder;
+    font-size: 2em;
+}
+
+footer {
+    background-color : gray;
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer img{
+    max-height: 50px;
+    width: auto;
+    margin: 5px 10px 5px 10px;
+}
+
+footer img:hover{
+    transform: scale(1.2);
+}
+
+/**                    */
+/**  SVG Nom Prénom    */
+/**                    */
+
+#SVGname text{
+    stroke-width: 3;
+    font-size : 150px;
+    animation: textAnimate 3s ease-in-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/** Animation du texte en SVG */
+@keyframes textAnimate{ 
+    0%{
+        stroke: #ff5656;
+        stroke-dasharray: 0%, 100%; 
+        stroke-dashoffset: 20%;   
+        fill: transparent;
+        }
+
+    80%{
+        stroke: #ff5656;
+        fill: transparent;
+
+    }
+
+    100%{
+        stroke: #ff5656;
+        fill: #ff5656;
+        stroke-dasharray: 100%, 0;
+        stroke-dashoffset: 0%;
+    }
+}
