@@ -44,6 +44,11 @@ $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;
 
 
+$perso-red: color("perso","red")!default;
+$perso-grey: color("perso","grey")!default;
+$perso-white: color("perso","white")!default;
+$perso-dark-grey: color("perso","dark-grey")!default;
+
 // 2. Badges
 // ==========================================================================
 
@@ -248,7 +253,8 @@ $navbar-height-mobile: 56px !default;
 $navbar-line-height-mobile: $navbar-height-mobile !default;
 $navbar-font-size: 1rem !default;
 $navbar-font-color: #fff !default;
-$navbar-brand-font-size: 2.1rem !default;
+$navbar-font-color-hover:#fff !default;
+$navbar-brand-font-size: .1rem !default;
 
 // 14. Side Navigation
 // ==========================================================================

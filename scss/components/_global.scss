@@ -8,13 +8,13 @@ html {
 }
 
 body {
-  // display: flex;
-  // min-height: 100vh;
-  // flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
-  // flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 button,
@@ -226,7 +226,7 @@ video.responsive-video {
   [class^="mdi-"], [class*="mdi-"],
   i.material-icons {
     display: inline-block;
-    float: left;
+/*     float: left; */
     font-size: 24px;
   }
 

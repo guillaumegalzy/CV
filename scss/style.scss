@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+/* Link to materialize scss to only watch change on 1 file 'style.scss' with sass. */
+@import "materialize";
+
+/** */
+/** Choix font */
+/** */
+  @font-face {
+    font-family: "Raleway Black";
+    src: url(/fonts/Raleway-Black.ttf) format("truetype");
+    font-family: "Montserrat Light";
+    src: url(/fonts/Montserrat-Light.ttf) format("truetype");
+    font-family: "Montserrat Regular";
+    src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
+  }
+
+/* Déclaration des variables Scss */ 
+  $font-Raleway : "Raleway Heavy", sans-serif;
+  $font-Montserrat-Regular : "Montserrat Regular", sans-serif;
+  $font-Montserrat-Light : "Montserrat Light", sans-serif;
+
+/** */
+/** */
+
+/** Paramétrage comportement défilement vertical sur la page*/
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+/** Organisation de la page */
+/**  HEADER    */
+/**            */
+header {
+  background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom:0;
+    padding-bottom: 2rem;
+    color: $perso-white;
+  }
+  
+  svg {
+    width: 100vw;
+    height: 30vh;
+
+    text {
+      stroke-width: 3;
+      /*? extrémités des bordures arrondies */
+      stroke-linecap: round;
+      /* */
+      font-size: 110px;
+      animation: textAnimate 3s ease-in-out;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    /** Animation du texte en SVG */
+    @keyframes textAnimate {
+      0% {
+        stroke: #ff5656;
+        stroke-dasharray: 0%, 100%;
+        stroke-dashoffset: 30%;
+        fill: transparent;
+      }
+      60% {
+        stroke: #ff5656;
+        fill: transparent;
+      }
+      100% {
+        stroke: #ff5656;
+        fill: #ff5656;
+        stroke-dasharray: 100%, 0;
+        stroke-dashoffset: 0%;
+      }
+    }
+  }
+  
+}
+
+/***/
+/**  NAVBAR    */
+/**            */
+.navbar-perso{
+  font-variant-caps: small-caps;
+  justify-content: space-between;
+}
+
+.sticky-nav{
+  position: fixed;
+  top:0;
+ }
+ 
+/***/
+/**  SECTION    */
+/**            */
+section{
+  
+  height: 70vh;
+
+  h1{
+    color: $perso-red;
+    font-family: $font-Raleway;
+    font-size: 3rem;
+  }
+
+  p{
+    color: $perso-dark-grey;  
+    font-family: $font-Montserrat-Light;
+  }
+
+  article {
+    p:nth-child(1){
+      font-family: $font-Montserrat-Regular;
+    }
+
+    p:nth-child(2){
+      color: $perso-red;
+    }
+  }
+
+}
+
+
+/***/
+/***/
+
+
+/***/
+/**  FOOTER    */
+/**            */
+footer {
+  background-color: gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  img {
+    max-height: 50px;
+    width: auto;
+    margin: 5px 10px 5px 10px;
+
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+
+}
+
+
+/***/
+/***/
+
+/*# sourceMappingURL=style.scss.map */

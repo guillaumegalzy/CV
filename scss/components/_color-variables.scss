@@ -330,6 +330,16 @@ $shades: (
   "transparent":  transparent
 );
 
+/* Ajout palettes couleur personnalisée */
+
+$perso: (
+   "red" :  #ff5656,
+   "grey" :  #494953,
+   "white" :  #ffffff,
+   "dark-grey" :  #262626
+);
+
+
 $colors: (
   "materialize-red": $materialize-red,
   "red": $red,
@@ -351,7 +361,8 @@ $colors: (
   "brown": $brown,
   "blue-grey": $blue-grey,
   "grey": $grey,
-  "shades": $shades
+  "shades": $shades,
+  "perso": $perso,
 ) !default;
 
 
