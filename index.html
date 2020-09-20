@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- JQUERY -->
     <script src="/js/bin/script.js"></script> <!-- Script JS  -->
     <script src="/js/bin/materialize.min.js"></script> <!-- Script JS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Icônes CDN -->
     <title>Guillaume GALZY</title>
 </head>
 
@@ -24,9 +25,9 @@
     </header>
 
     <main>
-        <nav class="navbar-perso" id="navbar">
+        <nav id="navbar">
             <div class="nav-wrapper">
-                <ul class="right hide-on-med-and-down" id="nav-mobile">
+                <ul class="right hide-on-med-and-down table-of-contents" id="nav-mobile">
                     <li><a href="#Competences">Compétences</a></li>
                     <li><a href="#Formation">Formation</a></li>
                     <li><a href="#Experience">Experience</a></li>
@@ -86,13 +87,18 @@
             <h1>Projet</h1>
         </section>
 
-        <section id="Contact" class="scrollspy">
-            <h1>Contact</h1>
-            <a href='mailto:guillaume.galzy@hotmail.fr'>guillaume.galzy@hotmail.fr</a>
-            <a href='tel:+33 6 77 32 95 15'>06 77 32 95 15</a>
-        </section>
+        
     </main>
-    <footer>
+    <footer id="Contact" class="scrollspy">
+
+        <a href='mailto:guillaume.galzy@hotmail.fr'> 
+            <i class="medium material-icons">contact_mail</i>
+        </a>
+
+        <a href='tel:+33 6 77 32 95 15'>
+            <i class="medium material-icons">contact_phone</i>
+        </a>  
+        
         <a href="http://github.com/guillaumegalzy" target="_new"> 
             <img src="./img/GitHub-Mark-64px.png" alt="GitHub">
         </a>

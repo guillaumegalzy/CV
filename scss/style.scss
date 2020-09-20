@@ -91,22 +91,16 @@ header {
 /***/
 /**  NAVBAR    */
 /**            */
-.navbar-perso{
-  font-variant-caps: small-caps;
-  justify-content: space-between;
-}
 
-.sticky-nav{
-  position: fixed;
-  top:0;
- }
- 
+
+
+
 /***/
 /**  SECTION    */
 /**            */
 section{
   
-  height: 70vh;
+  height: 80vh;
 
   h1{
     color: $perso-red;
@@ -131,7 +125,6 @@ section{
 
 }
 
-
 /***/
 /***/
 
@@ -140,13 +133,15 @@ section{
 /**  FOOTER    */
 /**            */
 footer {
-  background-color: gray;
+  background-color: lighten($perso-red, 5%);
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-content: center;
+  height: $navbar-height;
 
-  img {
-    max-height: 50px;
+  img,i {
+    max-height: $navbar-height*0.8;
     width: auto;
     margin: 5px 10px 5px 10px;
 
@@ -154,7 +149,6 @@ footer {
       transform: scale(1.2);
     }
   }
-
 }
 
 
