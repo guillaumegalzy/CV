@@ -42,12 +42,14 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 
-  h2 {
+  h1 {
+    font-family: $font-Raleway;
     text-align: center;
     margin-top: 0;
     margin-bottom:0;
     padding-bottom: 2rem;
     color: $perso-white;
+    font-size: 2rem;
   }
   
   svg {
@@ -59,7 +61,9 @@ header {
       /*? extrémités des bordures arrondies */
       stroke-linecap: round;
       /* */
+      fill: transparent;
       font-size: 110px;
+      font-family: $font-Raleway;
       animation: textAnimate 3s ease-in-out;
       animation-delay: 0.5s;
       animation-fill-mode: forwards;
@@ -100,19 +104,57 @@ header {
 /**            */
 section{
   
-  height: 80vh;
+  height: 90vh;
+  margin-bottom: 200px;
 
-  h1{
+  h2{
     color: $perso-red;
     font-family: $font-Raleway;
     font-size: 3rem;
   }
 
-  p{
-    color: $perso-dark-grey;  
-    font-family: $font-Montserrat-Light;
+  h3{
+    color: $perso-dark-grey;
+    font-family: $font-Montserrat-Regular;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-left: 20px;
   }
 
+  &#Connaissances{
+    ul {
+      margin-left: 30px;
+
+      p{
+        color: $perso-dark-grey;  
+        font-family: $font-Montserrat-Light;
+      }
+
+      li {   
+        text-align: center;
+        img{
+          width: auto;
+          height: 60px;
+
+          &#JQUERY {
+            height: 30px;
+          }
+
+          &.star-checked{
+            width: auto;
+            height: 30px;
+            margin-top:60px;
+          }
+      
+          &.star-unchecked{
+            height: 30px;
+            filter: grayscale(100%);
+          }
+        } 
+      }
+    }
+  }
+  
   article {
     p:nth-child(1){
       font-family: $font-Montserrat-Regular;
@@ -132,23 +174,44 @@ section{
 /***/
 /**  FOOTER    */
 /**            */
-footer {
+footer{
   background-color: lighten($perso-red, 5%);
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center;
   height: $navbar-height;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
 
-  img,i {
+  img{
     max-height: $navbar-height*0.8;
-    width: auto;
+    width: 50px;
     margin: 5px 10px 5px 10px;
 
     &:hover{
       transform: scale(1.2);
     }
   }
+
+  p{
+    color: $perso-white;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-left: 20px;
+  }
+}
+
+/* Classe qui sera utilisé pour rendre le footer sticky lorsque l'on a suffisament scrollé la page */
+.fixed-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 100;
 }
 
 

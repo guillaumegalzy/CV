@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css"> <!--  Link to CSS personal stylesheet also containing materialize -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- JQUERY -->
-    <script src="/js/bin/script.js"></script> <!-- Script JS  -->
-    <script src="/js/bin/materialize.min.js"></script> <!-- Script JS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Icônes CDN -->
     <title>Guillaume GALZY</title>
 </head>
 
 <body>
     <header>
         <svg 
-        version="1.1"
-        baseProfile="full"
-        viewBox="0 0 220 220">
-        
-        <text x="50%" y="50%" class="font1" style="fill:transparent" text-anchor="middle" dominant-baseline="middle">GUILLAUME GALZY</text> 
-        
+            version="1.1"
+            baseProfile="full"
+            viewBox="0 0 220 220">
+            
+            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">GUILLAUME GALZY</text> 
         </svg>
-        <h2 class="font2" style="font-size:2em">Développeur Web et mobile</h2>
+        <h1>Développeur Web et mobile</h1>
     </header>
 
-    <main>
         <nav id="navbar">
             <div class="nav-wrapper">
                 <ul class="right hide-on-med-and-down table-of-contents" id="nav-mobile">
@@ -33,23 +27,22 @@
                     <li><a href="#Experience">Experience</a></li>
                     <li><a href="#Connaissances">Connaissances</a></li>
                     <li><a href="#Projet">Projet</a></li>
-                    <li><a href="#Contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
 
         <section id="Competences" class="scrollspy">
-            <h1>Compétences</h1>
-                <p>
-                - Maquetter une application ou un site web (UX / UI design)<br>
-                - Création et administration de bases de données<br>
-                - Développement front-end et back-end<br>
-                - Déploiement d'applications
-                </p>
+            <h2>Compétences</h2>
+            <div class="row">
+                <div class="col s3">Maquetter une application ou un site web (UX / UI design)</div>
+                <div class="col s3">Création et administration de bases de données</div>
+                <div class="col s3">Développement front-end et back-end</div>
+                <div class="col s3">Déploiement d'applications</div>
+            </div>
         </section>
 
         <section id="Formation" class="scrollspy">
-            <h1 class='font1'>Formation</h1>
+            <h2 class='font1'>Formation</h2>
             <article>
                 <p>AFPA Amiens</p>
                 <p>2020 - 2021</p>
@@ -68,7 +61,7 @@
         </section>
 
         <section id="Experience" class="scrollspy">
-            <h1 class='font1'>Expériences professionnelles</h1>
+            <h2 class='font1'>Expériences professionnelles</h2>
                 <p>
                 - Réalisation d'études environnementales de produits de construction et bâtiments<br>
                 - Accompagnement à l'innovation de TPE/PME<br>
@@ -79,33 +72,193 @@
                 </p>
         </section>
 
-        <section id="Connaissances" class="scrollspy">
-            <h1>Connaissances</h1>
+        <section id="Connaissances" class="scrollspy row">
+            <h2 class="row">Connaissances</h2>
+            <div class="col s6">
+                <h3>Languages</h3>
+                <ul>
+                    <li class="col s6"> 
+                        <div class="col s4">
+                            <p>HTML5</p>
+                            <img src="/img/HTMLlogo.png" alt="HTML5">
+                        </div>
+                        <div class="col s8">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="1/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="2/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="3/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="4/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="5/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="6/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="7/10">
+                        </div>
+                    </li>
+                    <li class="col s6">
+                        <div class="col s4">
+                            <p>Javascript</p>
+                            <img src="/img/JSlogo.png" alt="Javascript">
+                        </div>  
+                        <div class="col s8">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="1/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="2/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="3/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="4/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="5/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="6/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="7/10">
+                        </div>
+                    </li>
+                    <li class="col s6">
+                        <div class="col s4">
+                            <p>CSS3</p>
+                            <img src="/img/CssLogo.svg" alt="CSS3">
+                        </div>
+                        <div class="col s8">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="1/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="2/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="3/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="4/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="5/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="6/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="7/10">
+                        </div>
+                    </li>
+                    <li class="col s6">
+                        <div class="col s4">
+                            <p>Sass</p>
+                            <img src="/img/SassLogo.svg" alt="Sass">
+                        </div>
+                        <div class="col s8">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="1/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="2/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="3/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="4/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="5/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="6/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="7/10">
+                        </div>
+                    </li>
+                    <li class="col s6">
+                        <div class="col s4">
+                            <p>JQUERY</p>
+                            <img src="/img/JQUERYLogo.png" alt="JQUERY" id="JQUERY">
+                        </div>
+                        <div class="col s8">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="1/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="2/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="3/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="4/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="5/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="6/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="7/10">
+
+                        </div>
+                    </li>
+                    <li class="col s6">
+                        <div class="col s4">
+                            <p>MySQL</p>
+                            <img src="/img/MySQLLogo.png" alt="MySQL">
+                        </div>                        
+                        <div class="col s8">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="1/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="2/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="3/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="4/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="5/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="6/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="7/10">
+                        </div>
+                    </li>
+                    <li class="col s6">
+                        <div class="col s4">
+                            <p>PHP</p>
+                            <img src="/img/PHPLogo.png" alt="PHP">
+                        </div>
+                        <div class="col s8">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="1/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="2/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="3/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="4/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="5/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="6/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="7/10">
+                        </div>
+                    </li>
+                    <li class="col s6">
+                        <div class="col s4">
+                            <p>Java</p>
+                            <img src="/img/JavaLogo.png" width="auto" height="50px" alt="Java">
+                        </div>
+                        <div class="col s8">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="1/10">
+                            <img src="img/RatingStar.svg" class="star-checked" alt="2/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="3/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="4/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="5/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="6/10">
+                            <img src="img/RatingStar.svg" class="star-unchecked" alt="7/10">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col s6">
+                <h3>Frameworks</h3>
+                <ul>
+                    <li class="col s4">
+                        <p>Bootstrap</p>
+                        <img src="/img/BoostrapLogo.png" alt="Bootstrap">
+                    </li>
+                    <li class="col s4">
+                        <p>Materialize</p>
+                        <img src="/img/MaterializeLogo.png" alt="Materialize">
+                    </li>
+                    <li class="col s4">
+                        <p>Symfony</p>
+                        <img src="/img/SymfonyLogo.png" alt="Symfony">
+                    </li>
+                </ul>
+            </div>
+            <div class="col s6">
+                <h3>Outils</h3>
+                <ul>
+                    <li class="col s6">
+                        <p>Visual Studio Code</p>
+                        <img src="/img/VisualCodeLogo.png" width="auto" height="50px" alt="Visual Studio Code">
+                    </li>
+                    <li class="col s6">
+                        <p>Figma</p>
+                        <img src="/img/FigmaLogo.svg" width="auto" height="50px" alt="Figma">
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <section id="Projet" class="scrollspy">
-            <h1>Projet</h1>
+        <section id="Projet" class="scrollspy row">
+            <h2>Projet</h2>
         </section>
 
-        
-    </main>
     <footer id="Contact" class="scrollspy">
+        <div>
+            <p>Guillaume GALZY</p>
+        </div>
 
-        <a href='mailto:guillaume.galzy@hotmail.fr'> 
-            <i class="medium material-icons">contact_mail</i>
-        </a>
-
-        <a href='tel:+33 6 77 32 95 15'>
-            <i class="medium material-icons">contact_phone</i>
-        </a>  
-        
-        <a href="http://github.com/guillaumegalzy" target="_new"> 
-            <img src="./img/GitHub-Mark-64px.png" alt="GitHub">
-        </a>
-        
-        <a href="#" target="_new" class="i"> 
-            <img src="./img/LI-In-Bug.png" alt="LinkedIn">
-        </a>
+        <div>
+            <a href="mailto:guillaume.galzy@hotmail.fr" title="Mail"> 
+                <img src="./img/email.svg" alt="Mail">
+            </a>
+            <a href="tel:+33 6 77 32 95 15" title="Telephone" id="Telephone">
+                <img src="./img/telephone.svg" alt="Telephone">
+            </a>  
+            <a href="#" class="i" target="_new" title="LinkedIn"> 
+                <img src="./img/LinkedInLogo.png" alt="LinkedIn">
+            </a>
+            <a href="http://github.com/guillaumegalzy" target="_new" title="GitHub"> 
+                <img src="./img/GitHubLogo.png" alt="GitHub">
+            </a>
+        </div>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- JQUERY -->
+    <script src="/js/bin/script.js"></script> <!-- Script JS  -->
+    <script src="/js/bin/materialize.min.js"></script> <!-- Script JS Materialize  -->
 </body>
 </html>

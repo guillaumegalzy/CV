@@ -8167,12 +8167,14 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 }
-header h2 {
+header h1 {
+  font-family: "Raleway Heavy", sans-serif;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 2rem;
   color: #ffffff;
+  font-size: 2rem;
 }
 header svg {
   width: 100vw;
@@ -8184,7 +8186,9 @@ header svg text {
   /*? extrémités des bordures arrondies */
   stroke-linecap: round;
   /* */
+  fill: transparent;
   font-size: 110px;
+  font-family: "Raleway Heavy", sans-serif;
   animation: textAnimate 3s ease-in-out;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
@@ -8215,16 +8219,46 @@ header svg text {
 /**  SECTION    */
 /**            */
 section {
-  height: 80vh;
+  height: 90vh;
+  margin-bottom: 200px;
 }
-section h1 {
+section h2 {
   color: #ff5656;
   font-family: "Raleway Heavy", sans-serif;
   font-size: 3rem;
 }
-section p {
+section h3 {
+  color: #262626;
+  font-family: "Montserrat Regular", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+section#Connaissances ul {
+  margin-left: 30px;
+}
+section#Connaissances ul p {
   color: #262626;
   font-family: "Montserrat Light", sans-serif;
+}
+section#Connaissances ul li {
+  text-align: center;
+}
+section#Connaissances ul li img {
+  width: auto;
+  height: 60px;
+}
+section#Connaissances ul li img#JQUERY {
+  height: 30px;
+}
+section#Connaissances ul li img.star-checked {
+  width: auto;
+  height: 30px;
+  margin-top: 60px;
+}
+section#Connaissances ul li img.star-unchecked {
+  height: 30px;
+  filter: grayscale(100%);
 }
 section article p:nth-child(1) {
   font-family: "Montserrat Regular", sans-serif;
@@ -8242,17 +8276,37 @@ footer {
   background-color: #ff7070;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center;
   height: 64px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
 }
-footer img, footer i {
+footer img {
   max-height: 51.2px;
-  width: auto;
+  width: 50px;
   margin: 5px 10px 5px 10px;
 }
-footer img:hover, footer i:hover {
+footer img:hover {
   transform: scale(1.2);
+}
+footer p {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+/* Classe qui sera utilisé pour rendre le footer sticky lorsque l'on a suffisament scrollé la page */
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 100;
 }
 
 /***/
