@@ -50,14 +50,18 @@ header {
     padding-bottom: 2rem;
     color: $perso-white;
     font-size: 2rem;
+
+    @media #{$medium-and-down}{
+      font-size: 1.5rem;
+    }
   }
   
   svg {
     width: 100vw;
     height: 30vh;
 
-    text {
-      stroke-width: 3;
+     text {
+      stroke-width: 2;
       /*? extrémités des bordures arrondies */
       stroke-linecap: round;
       /* */
@@ -67,6 +71,21 @@ header {
       animation: textAnimate 3s ease-in-out;
       animation-delay: 0.5s;
       animation-fill-mode: forwards;
+
+      
+      @media #{$medium-and-down}{
+        font-size: 4.2rem;
+        stroke-width: 1;
+        animation: textAnimate 4s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      @media #{$small-and-down}{
+        font-size: 2rem;
+        stroke-width: 1;
+        animation: textAnimate 4s ease-in-out;
+        animation-fill-mode: forwards;
+      }
     }
 
     /** Animation du texte en SVG */
@@ -132,9 +151,10 @@ section{
 
       li {   
         text-align: center;
+        
         img{
           width: auto;
-          height: 60px;
+          max-height: 60px;
 
           &#JQUERY {
             height: 30px;
@@ -143,12 +163,23 @@ section{
           &.star-checked{
             width: auto;
             height: 30px;
-            margin-top:60px;
+
+            @media #{$medium-and-down}{
+              width: auto;
+              height: 20px;
+            }
           }
       
           &.star-unchecked{
+            width: auto;
             height: 30px;
             filter: grayscale(100%);
+
+            @media #{$medium-and-down}{
+              width: auto;
+              height: 20px;
+              margin-top:60px;
+            }
           }
         } 
       }
@@ -191,6 +222,11 @@ footer{
     max-height: $navbar-height*0.8;
     width: 50px;
     margin: 5px 10px 5px 10px;
+    filter: hue-rotate(360deg);
+
+    &#GitHub{
+      filter: invert(100%);
+    }
 
     &:hover{
       transform: scale(1.2);
@@ -205,7 +241,7 @@ footer{
   }
 }
 
-/* Classe qui sera utilisé pour rendre le footer sticky lorsque l'on a suffisament scrollé la page */
+/* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
 .fixed-footer{
   position: fixed;
   bottom: 0;
@@ -213,7 +249,6 @@ footer{
   right: 0;
   opacity: 100;
 }
-
 
 /***/
 /***/

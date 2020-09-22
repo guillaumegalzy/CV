@@ -8176,13 +8176,18 @@ header h1 {
   color: #ffffff;
   font-size: 2rem;
 }
+@media only screen and (max-width : 992px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
 header svg {
   width: 100vw;
   height: 30vh;
   /** Animation du texte en SVG */
 }
 header svg text {
-  stroke-width: 3;
+  stroke-width: 2;
   /*? extrémités des bordures arrondies */
   stroke-linecap: round;
   /* */
@@ -8192,6 +8197,22 @@ header svg text {
   animation: textAnimate 3s ease-in-out;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
+}
+@media only screen and (max-width : 992px) {
+  header svg text {
+    font-size: 4.2rem;
+    stroke-width: 1;
+    animation: textAnimate 4s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+@media only screen and (max-width : 600px) {
+  header svg text {
+    font-size: 2rem;
+    stroke-width: 1;
+    animation: textAnimate 4s ease-in-out;
+    animation-fill-mode: forwards;
+  }
 }
 @keyframes textAnimate {
   0% {
@@ -8246,7 +8267,7 @@ section#Connaissances ul li {
 }
 section#Connaissances ul li img {
   width: auto;
-  height: 60px;
+  max-height: 60px;
 }
 section#Connaissances ul li img#JQUERY {
   height: 30px;
@@ -8254,11 +8275,24 @@ section#Connaissances ul li img#JQUERY {
 section#Connaissances ul li img.star-checked {
   width: auto;
   height: 30px;
-  margin-top: 60px;
+}
+@media only screen and (max-width : 992px) {
+  section#Connaissances ul li img.star-checked {
+    width: auto;
+    height: 20px;
+  }
 }
 section#Connaissances ul li img.star-unchecked {
+  width: auto;
   height: 30px;
   filter: grayscale(100%);
+}
+@media only screen and (max-width : 992px) {
+  section#Connaissances ul li img.star-unchecked {
+    width: auto;
+    height: 20px;
+    margin-top: 60px;
+  }
 }
 section article p:nth-child(1) {
   font-family: "Montserrat Regular", sans-serif;
@@ -8289,6 +8323,10 @@ footer img {
   max-height: 51.2px;
   width: 50px;
   margin: 5px 10px 5px 10px;
+  filter: hue-rotate(360deg);
+}
+footer img#GitHub {
+  filter: invert(100%);
 }
 footer img:hover {
   transform: scale(1.2);
@@ -8300,7 +8338,7 @@ footer p {
   margin-left: 20px;
 }
 
-/* Classe qui sera utilisé pour rendre le footer sticky lorsque l'on a suffisament scrollé la page */
+/* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
 .fixed-footer {
   position: fixed;
   bottom: 0;
