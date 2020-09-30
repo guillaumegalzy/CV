@@ -115,16 +115,18 @@ header {
 /**  NAVBAR    */
 /**            */
 
-
+#navbar{
+  z-index: 2; //obligation d'appliquer un z-index de la navbar supérieur à 0 pour éviter le recouvrement par les étoiles de la section compétences lors du scroll vertical de la page
+}
 
 
 /***/
 /**  SECTION    */
 /**            */
+
 section{
   
-  height: 90vh;
-  margin-bottom: 200px;
+  height: 70vh;
 
   h2{
     color: $perso-red;
@@ -140,46 +142,74 @@ section{
     margin-left: 20px;
   }
 
-  &#Connaissances{
+  
+  &#Connaissances{    
     ul {
       margin-left: 30px;
 
       p{
-        color: $perso-dark-grey;  
-        font-family: $font-Montserrat-Light;
+        color: $perso-grey;  
+        font-family: $font-Montserrat-Regular;
+        font-weight: 500;
+        font-variant: small-caps;
+        font-size: 1.2rem;
+        margin-top: 0;
       }
 
       li {   
         text-align: center;
         
-        img{
-          width: auto;
-          max-height: 60px;
+        div {
+          padding: 0;
+          height: 150px;
+        }
 
-          &#JQUERY {
-            height: 30px;
-          }
+        svg.star{
+          width: 33px;
 
-          &.star-checked{
-            width: auto;
-            height: 30px;
+          use.star-checked{
+            color: #FFC850;
+            fill: #FFDC64;
+            box-shadow: 0 0 0 rgb(0,0,0);
+            animation: pulse 1s infinite ease-in-out;
+            transform-origin: center;
+         
+            @keyframes pulse {
+              0% {
+                transform: scale(1.1);
+              }
+              50% {
+                transform: scale(1);
+              }
+              100% {
+                transform: scale(1.1);
+              }
+            }
 
             @media #{$medium-and-down}{
               width: auto;
               height: 20px;
             }
           }
-      
-          &.star-unchecked{
-            width: auto;
-            height: 30px;
-            filter: grayscale(100%);
+          
+          use.star-unchecked{
+            color: rgb(153, 152, 152);
+            fill: #CCC;
 
             @media #{$medium-and-down}{
               width: auto;
               height: 20px;
               margin-top:60px;
             }
+          }
+        }
+
+        img{
+          width: auto;
+          max-height: 60px;
+
+          &#JQUERY {
+            height: 30px;
           }
         } 
       }

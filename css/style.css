@@ -8236,12 +8236,15 @@ header svg text {
 /***/
 /**  NAVBAR    */
 /**            */
+#navbar {
+  z-index: 2;
+}
+
 /***/
 /**  SECTION    */
 /**            */
 section {
-  height: 90vh;
-  margin-bottom: 200px;
+  height: 70vh;
 }
 section h2 {
   color: #ff5656;
@@ -8259,11 +8262,57 @@ section#Connaissances ul {
   margin-left: 30px;
 }
 section#Connaissances ul p {
-  color: #262626;
-  font-family: "Montserrat Light", sans-serif;
+  color: #494953;
+  font-family: "Montserrat Regular", sans-serif;
+  font-weight: 500;
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  margin-top: 0;
 }
 section#Connaissances ul li {
   text-align: center;
+}
+section#Connaissances ul li div {
+  padding: 0;
+  height: 150px;
+}
+section#Connaissances ul li svg.star {
+  width: 33px;
+}
+section#Connaissances ul li svg.star use.star-checked {
+  color: #FFC850;
+  fill: #FFDC64;
+  box-shadow: 0 0 0 black;
+  animation: pulse 1s infinite ease-in-out;
+  transform-origin: center;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@media only screen and (max-width : 992px) {
+  section#Connaissances ul li svg.star use.star-checked {
+    width: auto;
+    height: 20px;
+  }
+}
+section#Connaissances ul li svg.star use.star-unchecked {
+  color: #999898;
+  fill: #CCC;
+}
+@media only screen and (max-width : 992px) {
+  section#Connaissances ul li svg.star use.star-unchecked {
+    width: auto;
+    height: 20px;
+    margin-top: 60px;
+  }
 }
 section#Connaissances ul li img {
   width: auto;
@@ -8271,28 +8320,6 @@ section#Connaissances ul li img {
 }
 section#Connaissances ul li img#JQUERY {
   height: 30px;
-}
-section#Connaissances ul li img.star-checked {
-  width: auto;
-  height: 30px;
-}
-@media only screen and (max-width : 992px) {
-  section#Connaissances ul li img.star-checked {
-    width: auto;
-    height: 20px;
-  }
-}
-section#Connaissances ul li img.star-unchecked {
-  width: auto;
-  height: 30px;
-  filter: grayscale(100%);
-}
-@media only screen and (max-width : 992px) {
-  section#Connaissances ul li img.star-unchecked {
-    width: auto;
-    height: 20px;
-    margin-top: 60px;
-  }
 }
 section article p:nth-child(1) {
   font-family: "Montserrat Regular", sans-serif;
