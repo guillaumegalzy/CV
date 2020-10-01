@@ -8276,39 +8276,53 @@ section#Connaissances ul li div {
   padding: 0;
   height: 150px;
 }
-section#Connaissances ul li svg.star {
+section#Connaissances ul li svg.star-checked {
   width: 33px;
-}
-section#Connaissances ul li svg.star use.star-checked {
+  animation: pulseShadow 2s ease-out infinite;
   color: #FFC850;
   fill: #FFDC64;
-  box-shadow: 0 0 0 black;
-  animation: pulse 1s infinite ease-in-out;
+}
+section#Connaissances ul li svg.star-checked use {
+  animation: pulse 2s ease-in-out infinite;
   transform-origin: center;
 }
 @keyframes pulse {
   0% {
-    transform: scale(1.1);
-  }
-  50% {
     transform: scale(1);
   }
+  50% {
+    transform: scale(1.05);
+  }
   100% {
-    transform: scale(1.1);
+    transform: scale(1);
+  }
+}
+@keyframes pulseShadow {
+  0% {
+    filter: drop-shadow(0px 0px 2px black);
+  }
+  50% {
+    filter: drop-shadow(0px 0px 5px black);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 2px black);
   }
 }
 @media only screen and (max-width : 992px) {
-  section#Connaissances ul li svg.star use.star-checked {
+  section#Connaissances ul li svg.star-checked {
     width: auto;
     height: 20px;
   }
 }
-section#Connaissances ul li svg.star use.star-unchecked {
-  color: #999898;
+section#Connaissances ul li svg.star-unchecked {
+  width: 33px;
+}
+section#Connaissances ul li svg.star-unchecked use {
+  color: #999999;
   fill: #CCC;
 }
 @media only screen and (max-width : 992px) {
-  section#Connaissances ul li svg.star use.star-unchecked {
+  section#Connaissances ul li svg.star-unchecked use {
     width: auto;
     height: 20px;
     margin-top: 60px;

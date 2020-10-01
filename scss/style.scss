@@ -125,7 +125,6 @@ header {
 /**            */
 
 section{
-  
   height: 70vh;
 
   h2{
@@ -142,7 +141,6 @@ section{
     margin-left: 20px;
   }
 
-  
   &#Connaissances{    
     ul {
       margin-left: 30px;
@@ -164,36 +162,54 @@ section{
           height: 150px;
         }
 
-        svg.star{
+        svg.star-checked{
           width: 33px;
+          animation: pulseShadow 2s ease-out infinite;
+          color: #FFC850;
+          fill: #FFDC64;
 
-          use.star-checked{
-            color: #FFC850;
-            fill: #FFDC64;
-            box-shadow: 0 0 0 rgb(0,0,0);
-            animation: pulse 1s infinite ease-in-out;
+          use{
+            animation: pulse 2s ease-in-out infinite;
             transform-origin: center;
+          }
          
-            @keyframes pulse {
-              0% {
-                transform: scale(1.1);
-              }
-              50% {
-                transform: scale(1);
-              }
-              100% {
-                transform: scale(1.1);
-              }
+          //animation star size
+          @keyframes pulse {
+            0% {
+              transform: scale(1);
             }
-
-            @media #{$medium-and-down}{
-              width: auto;
-              height: 20px;
+            50% {
+              transform: scale(1.05);
+            }
+            100% {
+              transform: scale(1);
             }
           }
           
-          use.star-unchecked{
-            color: rgb(153, 152, 152);
+          //animation drop shadow
+          @keyframes pulseShadow {
+            0%{
+              filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));
+            }
+            50%{
+              filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
+            }
+            100%{
+              filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));
+            }
+          }
+
+          @media #{$medium-and-down}{
+            width: auto;
+            height: 20px;
+          }
+        }
+
+        svg.star-unchecked{
+          width: 33px;
+          
+          use{
+            color: rgb(153, 153, 153);
             fill: #CCC;
 
             @media #{$medium-and-down}{
