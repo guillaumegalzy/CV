@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
-/* Link to materialize scss to only watch change on 1 file 'style.scss' with sass. */
-@import "materialize";
+/* Link to materialize scss */
+@import "materialize.scss";
+
+/* Link to font awesome scss */
+@import "fontawesome.scss";
+@import "font-awesome/solid.scss";
+@import "font-awesome/regular.scss";
 
 /** */
 /** Choix font */
@@ -162,8 +167,11 @@ section{
           height: 150px;
         }
 
+        svg.star {
+          width: 2rem;
+        }
+
         svg.star-checked{
-          width: 33px;
           animation: pulseShadow 2s ease-out infinite;
           color: #FFC850;
           fill: #FFDC64;
@@ -199,25 +207,12 @@ section{
             }
           }
 
-          @media #{$medium-and-down}{
-            width: auto;
-            height: 20px;
-          }
+          
         }
 
         svg.star-unchecked{
-          width: 33px;
-          
-          use{
             color: rgb(153, 153, 153);
             fill: #CCC;
-
-            @media #{$medium-and-down}{
-              width: auto;
-              height: 20px;
-              margin-top:60px;
-            }
-          }
         }
 
         img{
@@ -232,6 +227,30 @@ section{
     }
   }
   
+  &#Competences{    
+    .card{
+      margin: 20px;
+  
+      // Gestion des images dans les cards
+      img{
+        padding-top: 20px;
+        border-radius: 2px 2px 0 0;
+        position: relative;
+        
+        //center horizontally
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 70%;
+      }
+
+      // Gestion du titre dans les cards
+      content{
+        font: $font-Montserrat-Regular;
+        font-size: 1rem;
+      }
+    }
+  }
   article {
     p:nth-child(1){
       font-family: $font-Montserrat-Regular;
