@@ -3330,12 +3330,6 @@ table span.badge {
   margin-left: auto;
 }
 
-/* This is needed for some mobile phones to display the Google Icon font properly */
-.material-icons {
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "liga";
-}
-
 .container {
   margin: 0 auto;
   max-width: 1280px;
@@ -14240,6 +14234,23 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+/*!
+ * Font Awesome Free 5.15.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-brands-400.eot");
+  src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+.fab {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
 /** */
 /** Choix font */
 /** */
@@ -14346,7 +14357,7 @@ header svg text {
 }
 
 /***/
-/**  SECTION    */
+/**  SECTIONS    */
 /**            */
 section {
   height: 70vh;
@@ -14435,11 +14446,30 @@ section#Competences .card img {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 70%;
+  width: 40%;
+  padding-bottom: 30px;
 }
 section#Competences .card content {
   font: "Montserrat Regular", sans-serif;
   font-size: 1rem;
+}
+section#Competences .card i.fas.fa-plus {
+  color: #9ccc65;
+}
+section#Competences .card i.fas.fa-times {
+  color: #ff5656;
+}
+section#Competences .card .card-reveal#maquettage {
+  background-color: #b2dfdb;
+}
+section#Competences .card .card-reveal#integration {
+  background-color: #ffe0b2;
+}
+section#Competences .card .card-reveal#developpement {
+  background-color: #BBDEFB;
+}
+section#Competences .card .card-reveal#deploiement {
+  background-color: #C8E6C9;
 }
 section article p:nth-child(1) {
   font-family: "Montserrat Regular", sans-serif;
@@ -14458,7 +14488,6 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   height: 64px;
   position: fixed;
   bottom: 0;
@@ -14466,23 +14495,24 @@ footer {
   right: 0;
   opacity: 0;
 }
-footer img {
-  max-height: 51.2px;
-  width: 50px;
-  margin: 5px 10px 5px 10px;
-  filter: hue-rotate(360deg);
+footer div {
+  margin-left: 10px;
+  text-align: center;
+  align-self: center;
 }
-footer img#GitHub {
-  filter: invert(100%);
+footer i {
+  margin: 0px 15px;
+  color: #ffffff;
 }
-footer img:hover {
-  transform: scale(1.2);
+footer i:hover {
+  transform: scale(1.4) translateY(-10px);
+  filter: drop-shadow(5px 5px 0.5rem black);
+  /* transform: translateY(-10px); */
 }
 footer p {
   color: #ffffff;
   font-weight: 500;
   font-size: 1.5rem;
-  margin-left: 20px;
 }
 
 /* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */

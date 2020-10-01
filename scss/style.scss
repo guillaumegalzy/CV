@@ -7,6 +7,7 @@
 @import "fontawesome.scss";
 @import "font-awesome/solid.scss";
 @import "font-awesome/regular.scss";
+@import "font-awesome/brands.scss";
 
 /** */
 /** Choix font */
@@ -126,7 +127,7 @@ header {
 
 
 /***/
-/**  SECTION    */
+/**  SECTIONS    */
 /**            */
 
 section{
@@ -240,8 +241,8 @@ section{
         //center horizontally
         left: 50%;
         transform: translateX(-50%);
-
-        width: 70%;
+        width: 40%;
+        padding-bottom: 30px;
       }
 
       // Gestion du titre dans les cards
@@ -249,8 +250,33 @@ section{
         font: $font-Montserrat-Regular;
         font-size: 1rem;
       }
+
+      i.fas.fa-plus{
+        color : color("light-green", "lighten-1");
+      }
+
+      i.fas.fa-times{
+        color : $perso-red;
+      }
+      
+      // Gestion des couleurs sur les reveals des cartes
+      .card-reveal{
+        &#maquettage{
+          background-color : color("teal", "lighten-4");
+        }
+        &#integration{
+          background-color : color("orange", "lighten-4");
+        }
+        &#developpement{
+          background-color : color("blue", "lighten-4");
+        }
+        &#deploiement{
+          background-color : color("green", "lighten-4");
+        }
+      }
     }
   }
+
   article {
     p:nth-child(1){
       font-family: $font-Montserrat-Regular;
@@ -275,7 +301,6 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   height: $navbar-height;
   position: fixed;
   bottom: 0;
@@ -283,18 +308,20 @@ footer{
   right: 0;
   opacity: 0;
 
-  img{
-    max-height: $navbar-height*0.8;
-    width: 50px;
-    margin: 5px 10px 5px 10px;
-    filter: hue-rotate(360deg);
-
-    &#GitHub{
-      filter: invert(100%);
-    }
+  div{
+    margin-left: 10px;
+    text-align: center;
+    align-self: center;
+  }
+  //Gestion des icônes du footer
+  i{
+    margin: 0px 15px;
+    color: $perso-white;
 
     &:hover{
-      transform: scale(1.2);
+      transform: scale(1.4) translateY(-10px);
+      filter:drop-shadow( 5px 5px .5rem rgb(0 0 0));
+      /* transform: translateY(-10px); */
     }
   }
 
@@ -302,7 +329,6 @@ footer{
     color: $perso-white;
     font-weight: 500;
     font-size: 1.5rem;
-    margin-left: 20px;
   }
 }
 

@@ -22,10 +22,10 @@ $(document).ready(function(){
   
     if(scroll >= headerHeight){ /* Passage en fixed à partir du moment ou le scroll vertical est supérieur à celui du header */
       $('#Contact').addClass("fixed-footer");
-      $('#Contact').fadeIn(1000); //délai en ms pour l'animation
+      $('#Contact').fadeIn(800); //délai en ms pour l'animation
       
     } else {
-      $('#Contact').fadeOut(1000);
+      $('#Contact').fadeOut(800);
       $('#Contact').removeClass("fixed-footer");
     }
 });
