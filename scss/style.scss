@@ -231,7 +231,7 @@ section{
   &#Competences{    
     .card{
       margin: 20px;
-  
+
       // Gestion des images dans les cards
       img{
         padding-top: 20px;
@@ -242,13 +242,13 @@ section{
         left: 50%;
         transform: translateX(-50%);
         width: 40%;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
       }
 
-      // Gestion du titre dans les cards
-      content{
+      // Gestion des titres dans les cards
+      .card-content div, .card-reveal div{
         font: $font-Montserrat-Regular;
-        font-size: 1rem;
+        font-size: 1.8rem;
       }
 
       i.fas.fa-plus{
@@ -273,10 +273,29 @@ section{
         &#deploiement{
           background-color : color("green", "lighten-4");
         }
-        
-        //Rend cliquable les paragraphes de la card
+
+        //rend cliquable l'intégralité de la div
+        cursor: pointer; 
+
+        //cache la scrollbar quand contenu du reveal trop grand mais conserve la possibilité de scroll
+          //Chrome, Safari and Opera 
+          &::-webkit-scrollbar{
+            display: none;
+          }
+          // IE, Edge and Firefox
+          &::-webkit-scrollbar{
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+          }
+
         p{
-          cursor: pointer;
+          margin: 15px 0px 0px 0px;
+        }
+      }
+
+      &:hover{
+        i.fas.fa-plus{
+          transform: rotate(45deg);
         }
       }
     }

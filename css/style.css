@@ -14447,17 +14447,20 @@ section#Competences .card img {
   left: 50%;
   transform: translateX(-50%);
   width: 40%;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
-section#Competences .card content {
+section#Competences .card .card-content div, section#Competences .card .card-reveal div {
   font: "Montserrat Regular", sans-serif;
-  font-size: 1rem;
+  font-size: 1.8rem;
 }
 section#Competences .card i.fas.fa-plus {
   color: #9ccc65;
 }
 section#Competences .card i.fas.fa-times {
   color: #ff5656;
+}
+section#Competences .card .card-reveal {
+  cursor: pointer;
 }
 section#Competences .card .card-reveal#maquettage {
   background-color: #b2dfdb;
@@ -14471,8 +14474,20 @@ section#Competences .card .card-reveal#developpement {
 section#Competences .card .card-reveal#deploiement {
   background-color: #C8E6C9;
 }
+section#Competences .card .card-reveal::-webkit-scrollbar {
+  display: none;
+}
+section#Competences .card .card-reveal::-webkit-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
 section#Competences .card .card-reveal p {
-  cursor: pointer;
+  margin: 15px 0px 0px 0px;
+}
+section#Competences .card:hover i.fas.fa-plus {
+  transform: rotate(45deg);
 }
 section article p:nth-child(1) {
   font-family: "Montserrat Regular", sans-serif;
