@@ -14471,6 +14471,9 @@ section#Competences .card .card-reveal#developpement {
 section#Competences .card .card-reveal#deploiement {
   background-color: #C8E6C9;
 }
+section#Competences .card .card-reveal p {
+  cursor: pointer;
+}
 section article p:nth-child(1) {
   font-family: "Montserrat Regular", sans-serif;
 }

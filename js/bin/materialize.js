@@ -7578,7 +7578,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         $card.data('initialOverflow', $card.css('overflow') === undefined ? '' : $card.css('overflow'));
       }
       var $cardReveal = $(this).find('.card-reveal');
-      if ($(e.target).is($('.card-reveal .card-title')) || $(e.target).is($('.card-reveal .card-title i'))) {
+      if ($(e.target).is($('.card-reveal .card-title')) || $(e.target).is($('.card-reveal .card-title i')) || $(e.target).is($('.card-reveal p'))) { //* Ajout du trigger sur les paragraphes également
         // Make Reveal animate down and display none
         anim({
           targets: $cardReveal[0],
