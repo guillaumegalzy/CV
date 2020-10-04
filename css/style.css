@@ -14277,11 +14277,11 @@ html {
 }
 /** Organisation de la page */
 /**  HEADER    */
-/**            */
 header {
   background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 30vh;
 }
 header h1 {
   font-family: "Raleway Heavy", sans-serif;
@@ -14299,7 +14299,7 @@ header h1 {
 }
 header svg {
   width: 100vw;
-  height: 30vh;
+  height: 100%;
   /** Animation du texte en SVG */
 }
 header svg text {
@@ -14351,16 +14351,17 @@ header svg text {
 
 /***/
 /**  NAVBAR    */
-/**            */
-#navbar {
-  z-index: 2;
+.nav-wrapper {
+  height: 64px;
+}
+.nav-wrapper #navbar {
+  z-index: 1;
 }
 
 /***/
 /**  SECTIONS    */
-/**            */
 section {
-  height: 70vh;
+  height: 100vh;
 }
 section h2 {
   color: #ff5656;
@@ -14374,68 +14375,9 @@ section h3 {
   font-size: 1.5rem;
   margin-left: 20px;
 }
-section#Connaissances ul {
-  margin-left: 30px;
-}
-section#Connaissances ul p {
-  color: #494953;
-  font-family: "Montserrat Regular", sans-serif;
-  font-weight: 500;
-  font-variant: small-caps;
-  font-size: 1.2rem;
-  margin-top: 0;
-}
-section#Connaissances ul li {
-  text-align: center;
-}
-section#Connaissances ul li div {
-  padding: 0;
-  height: 150px;
-}
-section#Connaissances ul li svg.star {
-  width: 2rem;
-}
-section#Connaissances ul li svg.star-checked {
-  animation: pulseShadow 2s ease-out infinite;
-  color: #FFC850;
-  fill: #FFDC64;
-}
-section#Connaissances ul li svg.star-checked use {
-  animation: pulse 2s ease-in-out infinite;
-  transform-origin: center;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes pulseShadow {
-  0% {
-    filter: drop-shadow(0px 0px 2px black);
-  }
-  50% {
-    filter: drop-shadow(0px 0px 5px black);
-  }
-  100% {
-    filter: drop-shadow(0px 0px 2px black);
-  }
-}
-section#Connaissances ul li svg.star-unchecked {
-  color: #999999;
-  fill: #CCC;
-}
-section#Connaissances ul li img {
-  width: auto;
-  max-height: 60px;
-}
-section#Connaissances ul li img#JQUERY {
-  height: 30px;
+section#Competences {
+  margin-top: 64px;
+  height: 60vh;
 }
 section#Competences .card {
   margin: 20px;
@@ -14486,32 +14428,207 @@ section#Competences .card .card-reveal::-webkit-scrollbar {
 section#Competences .card .card-reveal p {
   margin: 15px 0px 0px 0px;
 }
-section#Competences .card:hover i.fas.fa-plus {
-  transform: rotate(45deg);
+section#Competences .card:hover i.fas.fa-plus, section#Competences .card:hover i.fas.fa-times {
+  transition: transform 2s;
+  transform: rotate(180deg);
 }
-section article p:nth-child(1) {
+section#Formation {
+  /* CONTENT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  /* EFFECTS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  /* GENERAL MEDIA QUERIES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+}
+section#Formation .timeline {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section#Formation .timeline ul li {
+  margin-right: 20px;
+}
+section#Formation .timeline ul li div {
+  position: relative;
+  bottom: 0px;
+  width: 400px;
+  padding: 15px;
+  background: #ff5656;
+}
+section#Formation .timeline ul li div::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  width: 0;
+  border-style: solid;
+}
+section#Formation .timeline ul li:nth-child(odd) div {
+  bottom: 15px;
+}
+section#Formation .timeline ul li:nth-child(odd) div::before {
+  left: 0px;
+  bottom: -15px;
+  transform: rotate(-90deg);
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #ff5656 transparent transparent;
+}
+section#Formation .timeline ul li:nth-child(odd) div::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  right: -40px;
+  width: 120%;
+  border: solid #ff5656;
+}
+section#Formation .timeline ul li:nth-child(even) div {
+  bottom: -15px;
+}
+section#Formation .timeline ul li:nth-child(even) div::before {
+  left: 0px;
+  right: 0px;
+  bottom: 100%;
+  transform: rotate(-90deg);
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #ff5656;
+}
+section#Formation .timeline ul li:nth-child(even) div::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  width: 100%;
+  border: solid #ff5656;
+}
+section#Formation .timeline ul {
+  padding: 50px 0;
+  display: flex;
+}
+section#Formation .timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+section#Formation .timeline ul li.in-view::after {
+  background: #F45B69;
+}
+section#Formation .timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+section#Formation .timeline ul li::after {
+  transition: background 0.5s ease-in-out;
+}
+section#Formation .timeline ul li:nth-child(odd) div {
+  transform: translate3d(0, -30px, 0);
+}
+section#Formation .timeline ul li:nth-child(even) div {
+  transform: translate3d(0, 150px, 0);
+}
+@media screen and (max-width: 900px) {
+  section#Formation .timeline ul li div {
+    width: 250px;
+  }
+  section#Formation .timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+@media screen and (max-width: 600px) {
+  section#Formation .timeline ul li {
+    margin-left: 20px;
+  }
+  section#Formation .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+  section#Formation .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  section#Formation .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #F45B69 transparent transparent;
+  }
+}
+section#Connaissances ul {
+  margin-left: 30px;
+}
+section#Connaissances ul p {
+  color: #494953;
   font-family: "Montserrat Regular", sans-serif;
+  font-weight: 500;
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  margin-top: 0;
 }
-section article p:nth-child(2) {
-  color: #ff5656;
+section#Connaissances ul li {
+  text-align: center;
+}
+section#Connaissances ul li div {
+  padding: 0;
+  height: 150px;
+}
+section#Connaissances ul li svg.star {
+  width: 2rem;
+}
+section#Connaissances ul li svg.star-checked {
+  animation: pulseShadow 3s ease-out infinite;
+  color: #FFC850;
+  fill: #FFDC64;
+}
+section#Connaissances ul li svg.star-checked use {
+  animation: pulse 3s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulseShadow {
+  0% {
+    filter: drop-shadow(0px 0px 1px black);
+  }
+  50% {
+    filter: drop-shadow(0px 0px 3px black);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 1px black);
+  }
+}
+section#Connaissances ul li svg.star-unchecked {
+  color: #999999;
+  fill: #CCC;
+}
+section#Connaissances ul li img {
+  width: auto;
+  max-height: 60px;
+}
+section#Connaissances ul li img#JQUERY {
+  height: 30px;
 }
 
 /***/
-/***/
-/***/
 /**  FOOTER    */
-/**            */
 footer {
-  background-color: #ff7070;
+  background-color: #ff5656;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 64px;
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
   opacity: 0;
+  box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -3px 1px -2px rgba(0, 0, 0, 0.12), 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  /* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
 }
 footer div {
   margin-left: 10px;
@@ -14525,24 +14642,20 @@ footer i {
 footer i:hover {
   transform: scale(1.4) translateY(-10px);
   filter: drop-shadow(5px 5px 0.5rem black);
-  /* transform: translateY(-10px); */
 }
 footer p {
   color: #ffffff;
   font-weight: 500;
   font-size: 1.5rem;
 }
-
-/* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
-.fixed-footer {
+footer.fixed-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 100;
+  opacity: 1;
 }
 
-/***/
 /***/
 /*# sourceMappingURL=style.scss.map */
 

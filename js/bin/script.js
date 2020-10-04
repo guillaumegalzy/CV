@@ -4,13 +4,13 @@ $(document).ready(function(){
 /* Initialisation fonction JS via JQUERY */
   /* Inititialisation Puspin - Sticky navbar */
     $('#navbar').pushpin({
-      top: $('#navbar').offset().top
+      top: $('header').height()
     });
 
     /* Inititialisation Scrollspy  - Suivi scrolling page*/
     $('.scrollspy').scrollSpy({
-      scrollOfffset:0,
-      activeClass:'active'
+      activeClass:'active',
+      scrollOffset: 100,
     });
   });
 
@@ -21,11 +21,11 @@ $(document).ready(function(){
     var headerHeight=$('header').height(); //récupère taille du header scroll de la page
   
     if(scroll >= headerHeight){ /* Passage en fixed à partir du moment ou le scroll vertical est supérieur à celui du header */
-      $('#Contact').addClass("fixed-footer");
-      $('#Contact').fadeIn(800); //délai en ms pour l'animation
+      $('footer').addClass("fixed-footer");
+      $('footer').fadeIn(800); //délai en ms pour l'animation
       
     } else {
-      $('#Contact').fadeOut(800);
-      $('#Contact').removeClass("fixed-footer");
+      $('footer').fadeOut(800);
+      $('footer').removeClass("fixed-footer");
     }
 });

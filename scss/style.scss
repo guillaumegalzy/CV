@@ -9,363 +9,496 @@
 @import "font-awesome/regular.scss";
 @import "font-awesome/brands.scss";
 
-/** */
-/** Choix font */
-/** */
-  @font-face {
-    font-family: "Raleway Black";
-    src: url(/fonts/Raleway-Black.ttf) format("truetype");
-    font-family: "Montserrat Light";
-    src: url(/fonts/Montserrat-Light.ttf) format("truetype");
-    font-family: "Montserrat Regular";
-    src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
-  }
+  /** */
+  /** Choix font */
+  /** */
+      @font-face {
+        font-family: "Raleway Black";
+        src: url(/fonts/Raleway-Black.ttf) format("truetype");
+        font-family: "Montserrat Light";
+        src: url(/fonts/Montserrat-Light.ttf) format("truetype");
+        font-family: "Montserrat Regular";
+        src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
+      }
 
-/* Déclaration des variables Scss */ 
-  $font-Raleway : "Raleway Heavy", sans-serif;
-  $font-Montserrat-Regular : "Montserrat Regular", sans-serif;
-  $font-Montserrat-Light : "Montserrat Light", sans-serif;
+    /* Déclaration des variables Scss */ 
+      $font-Raleway : "Raleway Heavy", sans-serif;
+      $font-Montserrat-Regular : "Montserrat Regular", sans-serif;
+      $font-Montserrat-Light : "Montserrat Light", sans-serif;
 
-/** */
-/** */
+  /** */
+  /** */
 
-/** Paramétrage comportement défilement vertical sur la page*/
-  html {
-    scroll-behavior: smooth;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
+  /** Paramétrage comportement défilement vertical sur la page*/
     html {
-      scroll-behavior: auto;
+      scroll-behavior: smooth;
     }
-  }
 
-/** Organisation de la page */
-/**  HEADER    */
-/**            */
-header {
-  background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  h1 {
-    font-family: $font-Raleway;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom:0;
-    padding-bottom: 2rem;
-    color: $perso-white;
-    font-size: 2rem;
-
-    @media #{$medium-and-down}{
-      font-size: 1.5rem;
-    }
-  }
-  
-  svg {
-    width: 100vw;
-    height: 30vh;
-
-     text {
-      stroke-width: 2;
-      /*? extrémités des bordures arrondies */
-      stroke-linecap: round;
-      /* */
-      fill: transparent;
-      font-size: 110px;
-      font-family: $font-Raleway;
-      animation: textAnimate 3s ease-in-out;
-      animation-delay: 0.5s;
-      animation-fill-mode: forwards;
-
-      
-      @media #{$medium-and-down}{
-        font-size: 4.2rem;
-        stroke-width: 1;
-        animation: textAnimate 4s ease-in-out;
-        animation-fill-mode: forwards;
-      }
-
-      @media #{$small-and-down}{
-        font-size: 2rem;
-        stroke-width: 1;
-        animation: textAnimate 4s ease-in-out;
-        animation-fill-mode: forwards;
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
     }
 
-    /** Animation du texte en SVG */
-    @keyframes textAnimate {
-      0% {
-        stroke: #ff5656;
-        stroke-dasharray: 0%, 100%;
-        stroke-dashoffset: 30%;
-        fill: transparent;
-      }
-      60% {
-        stroke: #ff5656;
-        fill: transparent;
-      }
-      100% {
-        stroke: #ff5656;
-        fill: #ff5656;
-        stroke-dasharray: 100%, 0;
-        stroke-dashoffset: 0%;
-      }
-    }
-  }
-  
-}
+  /** Organisation de la page */
+    /**  HEADER    */
+      header {
+        background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30vh;
 
-/***/
-/**  NAVBAR    */
-/**            */
+        h1 {
+          font-family: $font-Raleway;
+          text-align: center;
+          margin-top: 0;
+          margin-bottom:0;
+          padding-bottom: 2rem;
+          color: $perso-white;
+          font-size: 2rem;
 
-#navbar{
-  z-index: 2; //obligation d'appliquer un z-index de la navbar supérieur à 0 pour éviter le recouvrement par les étoiles de la section compétences lors du scroll vertical de la page
-}
-
-
-/***/
-/**  SECTIONS    */
-/**            */
-
-section{
-  height: 70vh;
-
-  h2{
-    color: $perso-red;
-    font-family: $font-Raleway;
-    font-size: 3rem;
-  }
-
-  h3{
-    color: $perso-dark-grey;
-    font-family: $font-Montserrat-Regular;
-    font-weight: 800;
-    font-size: 1.5rem;
-    margin-left: 20px;
-  }
-
-  &#Connaissances{    
-    ul {
-      margin-left: 30px;
-
-      p{
-        color: $perso-grey;  
-        font-family: $font-Montserrat-Regular;
-        font-weight: 500;
-        font-variant: small-caps;
-        font-size: 1.2rem;
-        margin-top: 0;
-      }
-
-      li {   
-        text-align: center;
-        
-        div {
-          padding: 0;
-          height: 150px;
-        }
-
-        svg.star {
-          width: 2rem;
-        }
-
-        svg.star-checked{
-          animation: pulseShadow 2s ease-out infinite;
-          color: #FFC850;
-          fill: #FFDC64;
-
-          use{
-            animation: pulse 2s ease-in-out infinite;
-            transform-origin: center;
+          @media #{$medium-and-down}{
+            font-size: 1.5rem;
           }
-         
-          //animation star size
-          @keyframes pulse {
-            0% {
-              transform: scale(1);
+        }
+        
+        svg {
+          width: 100vw;
+          height: 100%;
+
+          text {
+            stroke-width: 2;
+            /*? extrémités des bordures arrondies */
+            stroke-linecap: round;
+            /* */
+            fill: transparent;
+            font-size: 110px;
+            font-family: $font-Raleway;
+            animation: textAnimate 3s ease-in-out;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+
+            
+            @media #{$medium-and-down}{
+              font-size: 4.2rem;
+              stroke-width: 1;
+              animation: textAnimate 4s ease-in-out;
+              animation-fill-mode: forwards;
             }
-            50% {
-              transform: scale(1.05);
+
+            @media #{$small-and-down}{
+              font-size: 2rem;
+              stroke-width: 1;
+              animation: textAnimate 4s ease-in-out;
+              animation-fill-mode: forwards;
+            }
+          }
+
+          /** Animation du texte en SVG */
+          @keyframes textAnimate {
+            0% {
+              stroke: #ff5656;
+              stroke-dasharray: 0%, 100%;
+              stroke-dashoffset: 30%;
+              fill: transparent;
+            }
+            60% {
+              stroke: #ff5656;
+              fill: transparent;
             }
             100% {
-              transform: scale(1);
+              stroke: #ff5656;
+              fill: #ff5656;
+              stroke-dasharray: 100%, 0;
+              stroke-dashoffset: 0%;
             }
           }
-          
-          //animation drop shadow
-          @keyframes pulseShadow {
-            0%{
-              filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));
-            }
-            50%{
-              filter: drop-shadow(0px 0px 5px rgb(0, 0, 0));
-            }
-            100%{
-              filter: drop-shadow(0px 0px 2px rgb(0, 0, 0));
-            }
-          }
-
-          
         }
-
-        svg.star-unchecked{
-            color: rgb(153, 153, 153);
-            fill: #CCC;
-        }
-
-        img{
-          width: auto;
-          max-height: 60px;
-
-          &#JQUERY {
-            height: 30px;
-          }
-        } 
-      }
-    }
-  }
-  
-  &#Competences{    
-    .card{
-      margin: 20px;
-
-      // Gestion des images dans les cards
-      img{
-        padding-top: 20px;
-        border-radius: 2px 2px 0 0;
-        position: relative;
         
-        //center horizontally
-        left: 50%;
-        transform: translateX(-50%);
-        width: 40%;
-        padding-bottom: 20px;
       }
+    /***/
 
-      // Gestion des titres dans les cards
-      .card-content div, .card-reveal div{
-        font: $font-Montserrat-Regular;
-        font-size: 1.8rem;
-      }
+    /**  NAVBAR    */
+    
+    .nav-wrapper{
+      height: $navbar-height;
 
-      i.fas.fa-plus{
-        color : color("light-green", "lighten-1");
+        #navbar{
+          z-index: 1; //obligation d'appliquer un z-index de la navbar supérieur à 2 pour éviter le recouvrement par les cards de la section connaissances lors du scroll vertical de la page
+        }
       }
+    /***/
 
-      i.fas.fa-times{
-        color : $perso-red;
-      }
-      
-      // Gestion des couleurs sur les reveals des cartes
-      .card-reveal{
-        &#maquettage{
-          background-color : color("teal", "lighten-4");
-        }
-        &#integration{
-          background-color : color("orange", "lighten-4");
-        }
-        &#developpement{
-          background-color : color("blue", "lighten-4");
-        }
-        &#deploiement{
-          background-color : color("green", "lighten-4");
+    /**  SECTIONS    */
+      section{
+        height: 100vh;
+
+
+        h2{
+          color: $perso-red;
+          font-family: $font-Raleway;
+          font-size: 3rem;
         }
 
-        //rend cliquable l'intégralité de la div
-        cursor: pointer; 
+        h3{
+          color: $perso-dark-grey;
+          font-family: $font-Montserrat-Regular;
+          font-weight: 800;
+          font-size: 1.5rem;
+          margin-left: 20px;
+        }
 
-        //cache la scrollbar quand contenu du reveal trop grand mais conserve la possibilité de scroll
-          //Chrome, Safari and Opera 
-          &::-webkit-scrollbar{
-            display: none;
+        &#Competences{   
+          margin-top: $navbar-height; 
+          height: 60vh;
+          .card{
+            margin: 20px;
+
+            // Gestion des images dans les cards
+            img{
+              padding-top: 20px;
+              border-radius: 2px 2px 0 0;
+              position: relative;
+              
+              //center horizontally
+              left: 50%;
+              transform: translateX(-50%);
+              width: 40%;
+              padding-bottom: 20px;
+            }
+
+            // Gestion des titres dans les cards
+            .card-content div, .card-reveal div{
+              font: $font-Montserrat-Regular;
+              font-size: 1.8rem;
+            }
+
+            i.fas.fa-plus{
+              color : color("light-green", "lighten-1");
+            }
+
+            i.fas.fa-times{
+              color : $perso-red;
+            }
+            
+            // Gestion des couleurs sur les reveals des cartes
+            .card-reveal{
+              &#maquettage{
+                background-color : color("teal", "lighten-4");
+              }
+              &#integration{
+                background-color : color("orange", "lighten-4");
+              }
+              &#developpement{
+                background-color : color("blue", "lighten-4");
+              }
+              &#deploiement{
+                background-color : color("green", "lighten-4");
+              }
+
+              //rend cliquable l'intégralité de la div
+              cursor: pointer; 
+
+              //cache la scrollbar quand contenu du reveal trop grand mais conserve la possibilité de scroll
+                //Chrome, Safari and Opera 
+                &::-webkit-scrollbar{
+                  display: none;
+                }
+                // IE, Edge and Firefox
+                &::-webkit-scrollbar{
+                  -ms-overflow-style: none;  /* IE and Edge */
+                  scrollbar-width: none;  /* Firefox */
+                }
+
+              p{
+                margin: 15px 0px 0px 0px;
+              }
+            }
+
+            &:hover{
+              i.fas.fa-plus, i.fas.fa-times{
+                transition: transform 2s;
+                transform: rotate(180deg);
+              }
+            }
           }
-          // IE, Edge and Firefox
-          &::-webkit-scrollbar{
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+        }
+
+        &#Formation{
+          /* CONTENT
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .timeline {
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          ul {
+            li {
+              margin-right: 20px;
+              div {
+                position: relative;
+                bottom: 0px;
+                width: 400px;
+                padding: 15px;
+                background: $perso-red;
+
+                &::before{
+                  content: '';
+                  position: absolute;
+                  bottom: 0px;
+                  right: 5px;
+                  width: 0;
+                  border-style: solid ;
+                }
+              }
+
+              &:nth-child(odd) div {
+                bottom: 15px;
+          
+                &::before{
+                  left: 0px;
+                  bottom: -15px;
+                  transform: rotate(-90deg);
+                  border-width: 8px 16px 8px 0;
+                  border-color: transparent $perso-red transparent transparent; 
+                }
+
+                &::after{
+                  content: '';
+                  position: absolute;
+                  bottom: -30px;
+                  right: -40px;
+                  width: 120%;
+                  border: solid $perso-red;
+                }
+              }
+
+              &:nth-child(even) div {
+                bottom: -15px;
+
+                &::before{
+                  left: 0px;
+                  right: 0px;
+                  bottom: 100%;
+                  transform: rotate(-90deg);
+                  border-width: 8px 0 8px 16px;
+                  border-color: transparent transparent transparent $perso-red;
+                }
+
+                &::after{
+                  content: '';
+                  position: absolute;
+                  top: -30px;
+                  right: 20px;
+                  width: 100%;
+                  border: solid $perso-red;
+                }
+              }
+            }
           }
+        }
+                
+        /* EFFECTS
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .timeline {
+          ul {
+            padding: 50px 0;
+            display: flex;
+        
+            li {
+              div{
+                visibility: hidden;
+                opacity: 0;
+                transition: all .5s ease-in-out;
+              }
+
+              &.in-view{
+                &::after{
+                  background: #F45B69;
+                }
+                div{
+                  transform: none;
+                  visibility: visible;
+                  opacity: 1;
+                }
+              }
+
+              &::after{
+                transition: background .5s ease-in-out;
+              }
+
+              &:nth-child(odd) div {
+                transform: translate3d(0, -30px, 0);
+              }
+
+              &:nth-child(even) div {
+                transform: translate3d(0, 150px, 0);
+              }
+            }
+          }
+        }    
+        
+        /* GENERAL MEDIA QUERIES
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        
+        @media screen and (max-width: 900px) {
+          .timeline ul li div {
+            width: 250px;
+          }
+          .timeline ul li:nth-child(even) div {
+            left: -289px;
+            /*250+45-6*/
+          }
+        }
+        
+        @media screen and (max-width: 600px) {
+          .timeline ul li {
+            margin-left: 20px;
+          }
+          .timeline ul li div {
+            width: calc(100vw - 91px);
+          }
+          .timeline ul li:nth-child(even) div {
+            left: 45px;
+          }
+          .timeline ul li:nth-child(even) div::before {
+            left: -15px;
+            border-width: 8px 16px 8px 0;
+            border-color: transparent #F45B69 transparent transparent;
+          }
+        }
+      }
+
+        &#Connaissances{   
+          ul {
+            margin-left: 30px;
+
+            p{
+              color: $perso-grey;  
+              font-family: $font-Montserrat-Regular;
+              font-weight: 500;
+              font-variant: small-caps;
+              font-size: 1.2rem;
+              margin-top: 0;
+            }
+
+            li {   
+              text-align: center;
+              
+              div {
+                padding: 0;
+                height: 150px;
+              }
+
+              svg.star {
+                width: 2rem;
+              }
+
+              svg.star-checked{
+                animation: pulseShadow 3s ease-out infinite;
+                color: #FFC850;
+                fill: #FFDC64;
+
+                use{
+                  animation: pulse 3s ease-in-out infinite;
+                  transform-origin: center;
+                }
+              
+                //animation star size
+                @keyframes pulse {
+                  0% {
+                    transform: scale(1);
+                  }
+                  50% {
+                    transform: scale(1.05);
+                  }
+                  100% {
+                    transform: scale(1);
+                  }
+                }
+                
+                //Animation drop shadow
+                @keyframes pulseShadow {
+                  0%{
+                    filter: drop-shadow(0px 0px 1px rgb(0, 0, 0));
+                  }
+                  50%{
+                    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
+                  }
+                  100%{
+                    filter: drop-shadow(0px 0px 1px rgb(0, 0, 0));
+                  }
+                }          
+              }
+
+              svg.star-unchecked{
+                  color: rgb(153, 153, 153);
+                  fill: #CCC;
+              }
+
+              img{
+                width: auto;
+                max-height: 60px;
+
+                &#JQUERY {
+                  height: 30px;
+                }
+              } 
+            }
+          }
+        }
+      }
+    /***/
+
+
+    /**  FOOTER    */
+      footer{
+        background-color: $perso-red;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: $navbar-height;
+        position: fixed;
+        bottom: 0;
+        opacity: 0;
+        
+        // Application du même ombrage que la navbar mais inversé
+        box-shadow: 0 -2px 2px 0 rgba(0,0,0,0.14),
+        0 -3px 1px -2px rgba(0,0,0,0.12),
+        0 -1px 5px 0 rgba(0,0,0,0.2);
+
+        div{
+          margin-left: 10px;
+          text-align: center;
+          align-self: center;
+        }
+        //Gestion des icônes du footer
+        i{
+          margin: 0px 15px;
+          color: $perso-white;
+
+          &:hover{
+            transform: scale(1.4) translateY(-10px);
+            filter: drop-shadow( 5px 5px .5rem rgb(0 0 0));
+          }
+        }
 
         p{
-          margin: 15px 0px 0px 0px;
+          color: $perso-white;
+          font-weight: 500;
+          font-size: 1.5rem;
+        }
+
+        /* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
+        &.fixed-footer{
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          opacity: 1;
         }
       }
-
-      &:hover{
-        i.fas.fa-plus{
-          transform: rotate(45deg);
-        }
-      }
-    }
-  }
-
-  article {
-    p:nth-child(1){
-      font-family: $font-Montserrat-Regular;
-    }
-
-    p:nth-child(2){
-      color: $perso-red;
-    }
-  }
-
-}
-
-/***/
-/***/
-
-
-/***/
-/**  FOOTER    */
-/**            */
-footer{
-  background-color: lighten($perso-red, 5%);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: $navbar-height;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-
-  div{
-    margin-left: 10px;
-    text-align: center;
-    align-self: center;
-  }
-  //Gestion des icônes du footer
-  i{
-    margin: 0px 15px;
-    color: $perso-white;
-
-    &:hover{
-      transform: scale(1.4) translateY(-10px);
-      filter:drop-shadow( 5px 5px .5rem rgb(0 0 0));
-      /* transform: translateY(-10px); */
-    }
-  }
-
-  p{
-    color: $perso-white;
-    font-weight: 500;
-    font-size: 1.5rem;
-  }
-}
-
-/* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
-.fixed-footer{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 100;
-}
-
-/***/
-/***/
+    /***/
 
 /*# sourceMappingURL=style.scss.map */
