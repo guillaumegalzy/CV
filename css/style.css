@@ -2657,7 +2657,7 @@ a {
 }
 
 /* 2dp elevation modified*/
-.z-depth-1, .sidenav, .collapsible, .dropdown-content, .btn-floating, .btn, .btn-small, .btn-large, .toast, .card, .card-panel, nav {
+.z-depth-1, .sidenav, .collapsible, .dropdown-content, .btn-floating, .btn, .btn-small, .btn-large, .toast, .card, .card-panel {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -2666,7 +2666,7 @@ a {
 }
 
 /* 6dp elevation modified*/
-.z-depth-2 {
+.z-depth-2, nav {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
@@ -14355,7 +14355,7 @@ header svg text {
   height: 64px;
 }
 .nav-wrapper #navbar {
-  z-index: 1;
+  z-index: 4;
 }
 
 /***/
@@ -14621,32 +14621,34 @@ section#Connaissances ul li img#JQUERY {
 footer {
   background-color: #ff5656;
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   height: 64px;
   position: fixed;
   bottom: 0;
   opacity: 0;
-  box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -3px 1px -2px rgba(0, 0, 0, 0.12), 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.14), 0 -1px 10px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px -1px rgba(0, 0, 0, 0.3);
   /* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
 }
+footer.bot {
+  margin-bottom: inherit;
+}
 footer div {
-  margin-left: 10px;
-  text-align: center;
+  text-align: left;
   align-self: center;
 }
 footer i {
-  margin: 0px 15px;
   color: #ffffff;
 }
 footer i:hover {
   transform: scale(1.4) translateY(-10px);
   filter: drop-shadow(5px 5px 0.5rem black);
 }
-footer p {
+footer .text {
   color: #ffffff;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 footer.fixed-footer {
   position: fixed;
@@ -14654,9 +14656,16 @@ footer.fixed-footer {
   left: 0;
   right: 0;
   opacity: 1;
+  margin-bottom: 0;
 }
 
 /***/
+/* Classe utilisé pour mise en forme des tooltips du footer (mail et tel) */
+.material-tooltip {
+  background-color: #F45B69;
+  border-radius: 5px;
+}
+
 /*# sourceMappingURL=style.scss.map */
 
 /*# sourceMappingURL=style.css.map */

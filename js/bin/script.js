@@ -12,7 +12,17 @@ $(document).ready(function(){
       activeClass:'active',
       scrollOffset: 100,
     });
+
+    /* Initialisation Tooltip au survol pour mail et téléphone dans le footer*/
+    $('.tooltipped').tooltip({
+      inDuration: 700, // temps de l'animation en ms
+      outDuration: 500, // temps de l'animation en ms
+      margin: 40, // margin par rapport à son élément de réfénce
+      transitionMovement: 40, // déplacement vertical du tooltip lors de son animation
+      exitDelay: 100
+    });
   });
+
 
   /* Ajout trigger pour passer le footer en position:fixed à partir d'un certain défilement*/
   $(window).scroll(function (event) {
