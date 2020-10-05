@@ -14268,6 +14268,7 @@ readers do not read off random characters that represent icons */
 /** Paramétrage comportement défilement vertical sur la page*/
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -14275,8 +14276,8 @@ html {
     scroll-behavior: auto;
   }
 }
-/** Organisation de la page */
-/**  HEADER    */
+/** Organisation de la page **/
+/**  HEADER   **/
 header {
   background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
   background-repeat: no-repeat;
@@ -14350,7 +14351,7 @@ header svg text {
 }
 
 /***/
-/**  NAVBAR    */
+/**  NAVBAR   **/
 .nav-wrapper {
   height: 64px;
 }
@@ -14359,7 +14360,7 @@ header svg text {
 }
 
 /***/
-/**  SECTIONS    */
+/**  SECTIONS  **/
 section {
   height: 100vh;
 }
@@ -14397,9 +14398,17 @@ section#Competences .card .card-content div, section#Competences .card .card-rev
 }
 section#Competences .card i.fas.fa-plus {
   color: #9ccc65;
+  transition: transform 0.5s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
+  transform: rotate(0deg) scale(1);
 }
 section#Competences .card i.fas.fa-times {
   color: #ff5656;
+  transition: transform 0.5s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in-out;
+  transform: rotate(0deg) scale(1);
 }
 section#Competences .card .card-reveal {
   cursor: pointer;
@@ -14429,8 +14438,11 @@ section#Competences .card .card-reveal p {
   margin: 15px 0px 0px 0px;
 }
 section#Competences .card:hover i.fas.fa-plus, section#Competences .card:hover i.fas.fa-times {
-  transition: transform 2s;
-  transform: rotate(180deg);
+  transition: transform 0.8s;
+  transition-delay: 0.2s;
+  transition-timing-function: ease-in-out;
+  transform: rotate(180deg) scale(1.2);
+  filter: saturate(3);
 }
 section#Formation {
   /* CONTENT
@@ -14617,38 +14629,20 @@ section#Connaissances ul li img#JQUERY {
 }
 
 /***/
-/**  FOOTER    */
+/**  FOOTER    **/
 footer {
   background-color: #ff5656;
   display: flex;
   width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
   height: 64px;
   position: fixed;
   bottom: 0;
   opacity: 0;
-  box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.14), 0 -1px 10px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px -1px rgba(0, 0, 0, 0.3);
   /* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
+  box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.14), 0 -1px 10px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 footer.bot {
   margin-bottom: inherit;
-}
-footer div {
-  text-align: left;
-  align-self: center;
-}
-footer i {
-  color: #ffffff;
-}
-footer i:hover {
-  transform: scale(1.4) translateY(-10px);
-  filter: drop-shadow(5px 5px 0.5rem black);
-}
-footer .text {
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 1.4rem;
 }
 footer.fixed-footer {
   position: fixed;
@@ -14658,11 +14652,44 @@ footer.fixed-footer {
   opacity: 1;
   margin-bottom: 0;
 }
+footer div {
+  align-self: center;
+  text-align: center;
+}
+footer div #back-to-top {
+  position: fixed;
+  right: 10%;
+}
+footer div div:nth-child(1) {
+  border-left: oldlace solid 3px;
+}
+footer div div:nth-child(4) {
+  border-right: oldlace solid 3px;
+}
+footer div i {
+  color: #ffffff;
+}
+footer div i:hover {
+  transform: scale(1.4) translateY(-10px);
+  filter: drop-shadow(5px 5px 0.5rem black);
+}
+footer .text {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-align: left;
+  line-height: 100%;
+}
+@media only screen and (max-width : 600px) {
+  footer {
+    height: 56px;
+  }
+}
 
 /***/
 /* Classe utilisé pour mise en forme des tooltips du footer (mail et tel) */
 .material-tooltip {
-  background-color: #F45B69;
+  background-color: #ff5656;
   border-radius: 5px;
   filter: drop-shadow(5px 5px 0.5rem black);
 }

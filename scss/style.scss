@@ -32,6 +32,7 @@
   /** Paramétrage comportement défilement vertical sur la page*/
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden; // Empêche l'affichage d'élément hors du viewport horizontal
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -40,8 +41,8 @@
       }
     }
 
-  /** Organisation de la page */
-    /**  HEADER    */
+  /** Organisation de la page **/
+    /**  HEADER   **/
       header {
         background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
         background-repeat: no-repeat;
@@ -118,7 +119,7 @@
       }
     /***/
 
-    /**  NAVBAR    */
+    /**  NAVBAR   **/
     
     .nav-wrapper{
       height: $navbar-height;
@@ -129,7 +130,7 @@
       }
     /***/
 
-    /**  SECTIONS    */
+    /**  SECTIONS  **/
       section{
         height: 100vh;
 
@@ -175,10 +176,18 @@
 
             i.fas.fa-plus{
               color : color("light-green", "lighten-1");
+              transition: transform 0.5s;
+              transition-delay: 0s;
+              transition-timing-function: ease-in-out;
+              transform: rotate(0deg) scale(1);
             }
 
             i.fas.fa-times{
               color : $perso-red;
+              transition: transform 0.5s;
+              transition-delay: 0s;
+              transition-timing-function: ease-in-out;
+              transform: rotate(0deg) scale(1);
             }
             
             // Gestion des couleurs sur les reveals des cartes
@@ -217,8 +226,11 @@
 
             &:hover{
               i.fas.fa-plus, i.fas.fa-times{
-                transition: transform 2s;
-                transform: rotate(180deg);
+                transition: transform 0.8s;
+                transition-delay: .2s;
+                transition-timing-function: ease-in-out;
+                transform: rotate(180deg) scale(1.2);
+                filter: saturate(3);
               }
             }
           }
@@ -451,49 +463,20 @@
       }
     /***/
 
-
-    /**  FOOTER    */
+    /**  FOOTER    **/
       footer{
         background-color: $perso-red;
         display: flex;
         width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
         height: $navbar-height;
         position: fixed;
         bottom: 0;
         opacity: 0;
-       
+
         &.bot{ // Ecrase le comportement par défaut des rows de materialize pour conserver le margin à 0
           margin-bottom: inherit;
         }
-
-        // Application du même ombrage que la navbar mais inversé
-        box-shadow: 0 -4px 5px 0 rgba(0,0,0,0.14),
-        0 -1px 10px 0 rgba(0,0,0,0.12),
-        0 -2px 4px -1px rgba(0,0,0,0.3);
-
-        div{
-          text-align: left;
-          align-self: center;
-        }
-
-        //Gestion des icônes du footer
-        i{
-          color: $perso-white;
-
-          &:hover{
-            transform: scale(1.4) translateY(-10px);
-            filter: drop-shadow( 5px 5px .5rem rgb(0 0 0));
-          }
-        }
-
-        .text{
-          color: $perso-white;
-          font-weight: 500;
-          font-size: 1.4rem;
-        }
-
+        
         /* Classe utilisé pour rendre le footer fixe lorsque l'on a suffisament scrollé la page */
         &.fixed-footer{
           position: fixed;
@@ -504,12 +487,63 @@
           margin-bottom: 0;
         }
 
+        // Application du même ombrage que la navbar mais inversé
+        box-shadow: 0 -4px 5px 0 rgba(0,0,0,0.14),
+        0 -1px 10px 0 rgba(0,0,0,0.12),
+        0 -2px 4px -1px rgba(0,0,0,0.3);
+
+        div{
+          align-self: center;
+          text-align: center;
+
+          #back-to-top{ // Centrage de l'icône back to top sur le dernier espace du footer
+            position: fixed;
+            right: 10%;
+          }
+
+          div{
+            // Séparation verticale au sein du footer
+            &:nth-child(1){
+              border-left: oldlace solid 3px;
+            }
+            &:nth-child(4){
+              border-right: oldlace solid 3px;
+            }
+            
+          }
+          
+          //Gestion des icônes du footer
+            i{
+              color: $perso-white;
+              
+              &:hover{
+                transform: scale(1.4) translateY(-10px);
+                filter: drop-shadow( 5px 5px .5rem rgb(0 0 0));
+              }
+            }
+          
+        }
+
+        .text{
+          color: $perso-white;
+          font-weight: 500;
+          font-size: 1.4rem;
+          text-align: left;
+          line-height: 100%;
+        }
+
+
+        // Taille footer identique à la taille de la navbar pour petit écran
+        @media #{$small-and-down}{
+          height: $navbar-height-mobile;
+        }
       }
-      /***/
+
+    /***/
 
       /* Classe utilisé pour mise en forme des tooltips du footer (mail et tel) */
       .material-tooltip{
-        background-color: #F45B69;
+        background-color: $perso-red;
         border-radius: 5px;
         filter: drop-shadow( 5px 5px .5rem rgb(0 0 0)); // Ajout ombrage aux tooltips
       } 
