@@ -21,6 +21,9 @@ $(document).ready(function(){
       transitionMovement: 100, // déplacement vertical du tooltip lors de son animation
       exitDelay: 200
     });
+
+    /* Initilisation dropdown pour hambuger menu de la navbar en version mobile */
+    $('.dropdown-trigger').dropdown();
   });
 
 /* Ajout des triggers selon la position de la page */

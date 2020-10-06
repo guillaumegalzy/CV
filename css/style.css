@@ -4232,9 +4232,6 @@ nav ul a.btn > .material-icons, nav ul a.btn-small > .material-icons, nav ul a.b
   height: inherit;
   line-height: inherit;
 }
-nav ul a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
 nav ul.left {
   float: left;
 }
@@ -14270,37 +14267,53 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html html {
     scroll-behavior: auto;
   }
 }
+
 /** Organisation de la page **/
 /**  HEADER   **/
 header {
   background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 30vh;
+  height: 35vh;
+}
+@media only screen and (max-width : 992px) {
+  header {
+    height: 25vh;
+  }
 }
 header h1 {
   font-family: "Raleway Heavy", sans-serif;
   text-align: center;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 20;
   padding-bottom: 2rem;
   color: #ffffff;
   font-size: 2rem;
 }
+@media only screen and (min-width : 601px) {
+  header h1 {
+    font-size: 2.3rem;
+  }
+}
 @media only screen and (max-width : 992px) {
   header h1 {
-    font-size: 1.5rem;
+    font-size: 2.3rem;
+  }
+}
+@media only screen and (max-width : 600px) {
+  header h1 {
+    font-size: 1.8rem;
+    text-shadow: red 10px 10px 5px 5px;
   }
 }
 header svg {
   width: 100vw;
-  height: 100%;
+  height: 70%;
   /** Animation du texte en SVG */
 }
 header svg text {
@@ -14315,20 +14328,22 @@ header svg text {
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
+@media only screen and (min-width : 601px) {
+  header svg text {
+    font-size: 5.8rem;
+    stroke-width: 1;
+  }
+}
 @media only screen and (max-width : 992px) {
   header svg text {
-    font-size: 4.2rem;
+    font-size: 5.8rem;
     stroke-width: 1;
-    animation: textAnimate 4s ease-in-out;
-    animation-fill-mode: forwards;
   }
 }
 @media only screen and (max-width : 600px) {
   header svg text {
-    font-size: 2rem;
+    font-size: 4.5rem;
     stroke-width: 1;
-    animation: textAnimate 4s ease-in-out;
-    animation-fill-mode: forwards;
   }
 }
 @keyframes textAnimate {
@@ -14352,17 +14367,51 @@ header svg text {
 
 /***/
 /**  NAVBAR   **/
-.nav-wrapper {
-  height: 64px;
+nav {
+  z-index: 5;
+  font: "Montserrat Regular", sans-serif;
+  font-variant: small-caps;
 }
-.nav-wrapper #navbar {
-  z-index: 4;
+nav div.nav-wrapper ul li {
+  text-align: center;
+}
+nav div.nav-wrapper ul li a {
+  font-weight: 500;
+  color: #ffffff;
+}
+nav div.nav-wrapper ul li a.active {
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+nav div.nav-wrapper ul li.hide-on-med-and-down:hover {
+  background-color: #ff5656;
+}
+nav .dropdown-trigger #bars {
+  line-height: inherit;
+}
+nav .dropdown-trigger:hover {
+  background-color: none;
+}
+nav .dropdown-content {
+  background-color: #ff7070;
+  width: max-content !important;
+  height: auto !important;
+  box-shadow: none;
+  transform: translateY(-64px);
+}
+nav .dropdown-content li:hover {
+  background-color: #ff5656;
+}
+@media only screen and (max-width : 600px) {
+  nav .dropdown-content {
+    transform: translateY(-56px);
+  }
 }
 
 /***/
 /**  SECTIONS  **/
 section {
-  height: 100vh;
+  height: auto;
 }
 section h2 {
   color: #ff5656;
@@ -14686,7 +14735,6 @@ footer .text {
   }
 }
 
-/***/
 /* Classe utilisé pour mise en forme des tooltips du footer (mail et tel) */
 .material-tooltip {
   background-color: #ff5656;
@@ -14694,6 +14742,7 @@ footer .text {
   filter: drop-shadow(5px 5px 0.5rem black);
 }
 
+/***/
 /*# sourceMappingURL=style.scss.map */
 
 /*# sourceMappingURL=style.css.map */

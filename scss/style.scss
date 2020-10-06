@@ -33,12 +33,13 @@
     html {
       scroll-behavior: smooth;
       overflow-x: hidden; // Empêche l'affichage d'élément hors du viewport horizontal
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
+      
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
       }
+    
     }
 
   /** Organisation de la page **/
@@ -47,26 +48,39 @@
         background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        height: 30vh;
+        height: 35vh;
+        
+        @media #{$medium-and-down}{
+          height: 25vh;
+        }
 
         h1 {
           font-family: $font-Raleway;
           text-align: center;
           margin-top: 0;
-          margin-bottom:0;
+          margin-bottom:20;
           padding-bottom: 2rem;
           color: $perso-white;
           font-size: 2rem;
+          
+          @media #{$medium-and-up}{
+            font-size: 2.3rem;
+          }
 
           @media #{$medium-and-down}{
-            font-size: 1.5rem;
+            font-size: 2.3rem;
+          }
+          
+          @media #{$small-and-down}{
+            font-size: 1.8rem;
+            text-shadow: red 10px 10px 5px 5px;
           }
         }
         
         svg {
           width: 100vw;
-          height: 100%;
-
+          height: 70%;
+          
           text {
             stroke-width: 2;
             /*? extrémités des bordures arrondies */
@@ -78,20 +92,20 @@
             animation: textAnimate 3s ease-in-out;
             animation-delay: 0.5s;
             animation-fill-mode: forwards;
-
             
-            @media #{$medium-and-down}{
-              font-size: 4.2rem;
+            @media #{$medium-and-up}{
+              font-size: 5.8rem;
               stroke-width: 1;
-              animation: textAnimate 4s ease-in-out;
-              animation-fill-mode: forwards;
             }
 
-            @media #{$small-and-down}{
-              font-size: 2rem;
+            @media #{$medium-and-down}{
+              font-size: 5.8rem;
               stroke-width: 1;
-              animation: textAnimate 4s ease-in-out;
-              animation-fill-mode: forwards;
+            }
+            
+            @media #{$small-and-down}{
+              font-size: 4.5rem;
+              stroke-width: 1;
             }
           }
 
@@ -115,25 +129,64 @@
             }
           }
         }
-        
       }
     /***/
 
     /**  NAVBAR   **/
-    
-    .nav-wrapper{
-      height: $navbar-height;
-
-        #navbar{
-          z-index: 4; //obligation d'appliquer un z-index de la navbar supérieur à 2 pour éviter le recouvrement par les cards de la section connaissances lors du scroll vertical de la page
+    nav{
+      z-index: 5; //obligation d'appliquer un z-index de la navbar supérieur à 2 pour éviter le recouvrement par les cards de la section connaissances lors du scroll vertical de la page
+      
+      font: $font-Montserrat-Regular;
+      font-variant: small-caps;
+      
+      div.nav-wrapper ul li{
+        text-align: center;
+        
+        a { // Gestion des propritétés communes de l'ensemble des liens de la navbar
+          font-weight: 500;
+          color: $perso-white;
+          
+          &.active { // Gestion de la typographie du lien actif
+            font-weight: 900;
+            font-size: 1.4rem;
+          }
+        }
+        
+        &.hide-on-med-and-down:hover{ // Gestion du hover sur les liens de la navbar version large
+          background-color: $perso-red;
         }
       }
+      
+      .dropdown-trigger{ // Gestion du bouton de trigger du dropdown
+        #bars{
+          line-height: inherit; // Ajustement de la hauteur de ligne automatique selon la taille de la navbar
+        }
+        &:hover{
+          background-color: none;
+        }
+      }
+      
+      .dropdown-content{ // Gestion des liens du menu dropdown
+        background-color: lighten($color: $perso-red, $amount: 5%);
+        width: max-content !important;
+        height:auto !important;
+        box-shadow: none;
+        transform: translateY(-$navbar-height); //translation forcée pour se mettre sous la navbar taille normale
+        
+        li:hover{
+          background-color: $perso-red;
+        }
+        
+        @media #{$small-and-down} {
+          transform: translateY(-$navbar-height-mobile); //translation forcée pour se mettre sous la navbar taille mobile
+        }
+      }
+    }   
     /***/
 
     /**  SECTIONS  **/
       section{
-        height: 100vh;
-
+        height: auto;
 
         h2{
           color: $perso-red;
@@ -152,6 +205,7 @@
         &#Competences{   
           margin-top: $navbar-height; 
           height: 60vh;
+
           .card{
             margin: 20px;
 
@@ -539,14 +593,14 @@
         }
       }
 
-    /***/
-
       /* Classe utilisé pour mise en forme des tooltips du footer (mail et tel) */
       .material-tooltip{
         background-color: $perso-red;
         border-radius: 5px;
         filter: drop-shadow( 5px 5px .5rem rgb(0 0 0)); // Ajout ombrage aux tooltips
       } 
+    /***/
+
 
 
 /*# sourceMappingURL=style.scss.map */
