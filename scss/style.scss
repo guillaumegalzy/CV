@@ -14,11 +14,11 @@
   /** */
       @font-face {
         font-family: "Raleway Black";
-        src: url(/fonts/Raleway-Black.ttf) format("truetype");
+        src: url('../fonts/Raleway-Black.ttf') format("truetype");
         font-family: "Montserrat Light";
-        src: url(/fonts/Montserrat-Light.ttf) format("truetype");
+        src: url('../fonts/Montserrat-Light.ttf') format("truetype");
         font-family: "Montserrat Regular";
-        src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
+        src: url('../fonts/Montserrat-Regular.ttf') format("truetype");
       }
 
     /* Déclaration des variables Scss */ 
@@ -45,7 +45,7 @@
   /** Organisation de la page **/
     /**  HEADER   **/
       header {
-        background-image: url("/img/pexels-bongkarn-thanyakij-3740723.jpg");
+        background-image: url('../img/header.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         height: 35vh;
