@@ -14604,6 +14604,7 @@ section#Connaissances ul p {
 }
 section#Connaissances ul li {
   text-align: center;
+  padding: 0;
 }
 section#Connaissances ul li div {
   padding: 0;
@@ -14653,6 +14654,9 @@ section#Connaissances ul li img {
 }
 section#Connaissances ul li img#JQUERY {
   height: 30px;
+}
+section#Connaissances ul li#Symfony {
+  margin-top: 20px;
 }
 
 /**  FOOTER    **/
