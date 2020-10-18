@@ -14369,6 +14369,7 @@ header svg text {
 /**  NAVBAR   **/
 nav {
   z-index: 5;
+  width: 100%;
   font: "Montserrat Regular", sans-serif;
   font-variant: small-caps;
 }
@@ -14395,6 +14396,7 @@ nav .dropdown-trigger:hover {
 nav .dropdown-content {
   background-color: #ff7070;
   width: max-content !important;
+  position: relative;
   height: auto !important;
   box-shadow: none;
   transform: translateY(-64px);
@@ -14427,7 +14429,6 @@ section h3 {
 }
 section#Competences {
   margin-top: 64px;
-  height: 60vh;
 }
 section#Competences .card {
   margin: 20px;

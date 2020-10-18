@@ -136,6 +136,7 @@
     nav{
       z-index: 5; //obligation d'appliquer un z-index de la navbar supérieur à 2 pour éviter le recouvrement par les cards de la section connaissances lors du scroll vertical de la page
       
+      width: 100%;
       font: $font-Montserrat-Regular;
       font-variant: small-caps;
       
@@ -156,7 +157,7 @@
           background-color: $perso-red;
         }
       }
-      
+
       .dropdown-trigger{ // Gestion du bouton de trigger du dropdown
         #bars{
           line-height: inherit; // Ajustement de la hauteur de ligne automatique selon la taille de la navbar
@@ -169,6 +170,7 @@
       .dropdown-content{ // Gestion des liens du menu dropdown
         background-color: lighten($color: $perso-red, $amount: 5%);
         width: max-content !important;
+        position: relative;
         height:auto !important;
         box-shadow: none;
         transform: translateY(-$navbar-height); //translation forcée pour se mettre sous la navbar taille normale
@@ -178,7 +180,7 @@
         }
         
         @media #{$small-and-down} {
-          transform: translateY(-$navbar-height-mobile); //translation forcée pour se mettre sous la navbar taille mobile
+          transform: translateY(-$navbar-height-mobile); //translation forcée pour se mettre sous la navbar taille mobile et collé au bord droit de l'affichage
         }
       }
     }   
@@ -204,7 +206,6 @@
 
         &#Competences{   
           margin-top: $navbar-height; 
-          height: 60vh;
 
           .card{
             margin: 20px;
