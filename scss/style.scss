@@ -319,7 +319,7 @@
               li:nth-child(even){
                 transform: translateY(75px);
                 border-top: 3px solid $perso-red; // ligne timeline
-                &::after{
+                &::after{ // marqueur rond sur la timelime
                   content: '';
                   position: absolute;
                   left: 20;
@@ -336,7 +336,7 @@
               li:nth-child(odd){
                 transform: translateY(-72px);
                 border-bottom: 3px solid $perso-red; // ligne timeline
-                &::after{
+                &::after{ // marqueur rond sur la timelime
                   content: '';
                   position: absolute;
                   left: 20;
@@ -347,6 +347,62 @@
                   bottom: 0;
                   border: solid 10px $perso-red;
                   border-radius: 50%;
+                }
+              }
+            }
+          }
+
+          // Affichage en vertical de la timeline pour petits écrans
+          @media #{$medium-and-down}{
+            div{
+              margin : 10px 0px 10px 25px;
+
+              .timeline{
+                li{
+                  line-height: 100%;
+                  height: 150px;
+                  text-align: left;
+
+                  p{
+                    margin-top: 0px;
+                    margin-left: 20px;
+                  }
+                }
+
+                li:nth-child(even){
+                  transform: translateY(0);
+                  border-top: none;
+                  border-left: 3px solid $perso-red;
+    
+                  &::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 10;
+                    top: 0;
+                    transform: translateY(300%) translateX(-11px);
+                    height: 10%;
+                    border: solid 10px $perso-red;
+                    border-radius: 50%;
+                  }
+                }
+    
+                li:nth-child(odd){
+                  transform: translateY(0);
+                      border-bottom: none;
+                      border-left: 3px solid $perso-red;
+    
+                  &::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 10;
+                    top: 0;
+                    transform: translateY(300%) translateX(-11px);
+                    height: 10%;
+                    border: solid 10px $perso-red;
+                    border-radius: 50%;
+                  }
                 }
               }
             }

@@ -14545,6 +14545,52 @@ section#Formation div .timeline li:nth-child(odd)::after {
   border: solid 10px #ff5656;
   border-radius: 50%;
 }
+@media only screen and (max-width : 992px) {
+  section#Formation div {
+    margin: 10px 0px 10px 25px;
+  }
+  section#Formation div .timeline li {
+    line-height: 100%;
+    height: 150px;
+    text-align: left;
+  }
+  section#Formation div .timeline li p {
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+  section#Formation div .timeline li:nth-child(even) {
+    transform: translateY(0);
+    border-top: none;
+    border-left: 3px solid #ff5656;
+  }
+  section#Formation div .timeline li:nth-child(even)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 10;
+    top: 0;
+    transform: translateY(300%) translateX(-11px);
+    height: 10%;
+    border: solid 10px #ff5656;
+    border-radius: 50%;
+  }
+  section#Formation div .timeline li:nth-child(odd) {
+    transform: translateY(0);
+    border-bottom: none;
+    border-left: 3px solid #ff5656;
+  }
+  section#Formation div .timeline li:nth-child(odd)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 10;
+    top: 0;
+    transform: translateY(300%) translateX(-11px);
+    height: 10%;
+    border: solid 10px #ff5656;
+    border-radius: 50%;
+  }
+}
 section#Connaissances ul {
   margin-left: 30px;
 }
