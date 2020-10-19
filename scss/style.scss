@@ -30,51 +30,36 @@
   /** */
 
   /** Paramétrage comportement défilement vertical sur la page*/
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden; // Empêche l'affichage d'élément hors du viewport horizontal
-      
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden; // Empêche l'affichage d'élément hors du viewport horizontal
+        
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
         }
+      
       }
-    
-    }
 
   /** Organisation de la page **/
     /**  HEADER   **/
       header {
-        background-image: url('../img/header.jpg');
+        background-image: url('../img/header_filtered.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         height: 35vh;
         
-        @media #{$medium-and-down}{
-          height: 25vh;
-        }
-
         h1 {
+          position : absolute;
+          top: 15%;
+          bottom: 0%;
+          left: 0%;
+          right: 0%;
           font-family: $font-Raleway;
           text-align: center;
-          margin-top: 0;
-          margin-bottom:20;
-          padding-bottom: 2rem;
           color: $perso-white;
-          font-size: 2rem;
-          
-          @media #{$medium-and-up}{
-            font-size: 2.3rem;
-          }
-
-          @media #{$medium-and-down}{
-            font-size: 2.3rem;
-          }
-          
-          @media #{$small-and-down}{
-            font-size: 1.8rem;
-            text-shadow: red 10px 10px 5px 5px;
-          }
+          font-size: 2.3rem;
         }
         
         svg {
@@ -82,31 +67,16 @@
           height: 70%;
           
           text {
-            stroke-width: 2;
+            stroke-width: 1;
             /*? extrémités des bordures arrondies */
             stroke-linecap: round;
             /* */
             fill: transparent;
-            font-size: 110px;
+            font-size: 5.8rem;
             font-family: $font-Raleway;
             animation: textAnimate 3s ease-in-out;
             animation-delay: 0.5s;
             animation-fill-mode: forwards;
-            
-            @media #{$medium-and-up}{
-              font-size: 5.8rem;
-              stroke-width: 1;
-            }
-
-            @media #{$medium-and-down}{
-              font-size: 5.8rem;
-              stroke-width: 1;
-            }
-            
-            @media #{$small-and-down}{
-              font-size: 4.5rem;
-              stroke-width: 1;
-            }
           }
 
           /** Animation du texte en SVG */
@@ -129,61 +99,103 @@
             }
           }
         }
+
+        //Media Queries pour le header     
+        @media #{$medium-and-down}{
+          height: 25vh;
+
+          h1 {
+            font-size: 2.3rem;
+            position : absolute;
+            top: 10%;
+            bottom: 0%;
+            left: 0%;
+            right: 0%;  
+          }
+
+          svg{
+            text{
+              font-size: 5.8rem;
+              stroke-width: 1;
+            }
+          }
+        }
+
+
+
+        @media #{$small-and-down}{
+          h1 {
+            font-size: 1.8rem;
+            position : absolute;
+            top: 10%;
+            bottom: 0%;
+            left: 0%;
+            right: 0%;  
+          }
+
+          svg{
+            text{
+              font-size: 4.5rem;
+              stroke-width: 1;
+            }
+          }
+        }
       }
     /***/
 
     /**  NAVBAR   **/
-    nav{
-      z-index: 5; //obligation d'appliquer un z-index de la navbar supérieur à 2 pour éviter le recouvrement par les cards de la section connaissances lors du scroll vertical de la page
-      
-      width: 100%;
-      font: $font-Montserrat-Regular;
-      font-variant: small-caps;
-      
-      div.nav-wrapper ul li{
-        text-align: center;
+      nav{
+        z-index: 5; //obligation d'appliquer un z-index de la navbar supérieur à 2 pour éviter le recouvrement par les cards de la section connaissances lors du scroll vertical de la page
+        background-color:$perso-red;
+
+        width: 100%;
+        font: $font-Montserrat-Regular;
+        font-variant: small-caps;
         
-        a { // Gestion des propritétés communes de l'ensemble des liens de la navbar
-          font-weight: 500;
-          color: $perso-white;
+        div.nav-wrapper ul li{
+          text-align: center;
           
-          &.active { // Gestion de la typographie du lien actif
-            font-weight: 900;
-            font-size: 1.4rem;
+          a { // Gestion des propritétés communes de l'ensemble des liens de la navbar
+            font-weight: 500;
+            color: $perso-white;
+            
+            &.active { // Gestion de la typographie du lien actif
+              font-weight: 900;
+              font-size: 1.4rem;
+            }
+          }
+          
+          &.hide-on-med-and-down:hover{ // Gestion du hover sur les liens de la navbar version large
+            background-color: $perso-red;
+          }
+        }
+
+        .dropdown-trigger{ // Gestion du bouton de trigger du dropdown
+          #bars{
+            line-height: inherit; // Ajustement de la hauteur de ligne automatique selon la taille de la navbar
+          }
+          &:hover{
+            background-color: none;
           }
         }
         
-        &.hide-on-med-and-down:hover{ // Gestion du hover sur les liens de la navbar version large
-          background-color: $perso-red;
+        .dropdown-content{ // Gestion des liens du menu dropdown
+          background-color: lighten($color: $perso-red, $amount: 5%);
+          width: max-content !important;
+          position: relative;
+          height:auto !important;
+          box-shadow: none;
+          transform: translateY(-$navbar-height); //translation forcée pour se mettre sous la navbar taille normale
+          
+          li:hover{
+            background-color: $perso-red;
+          }
+          
+          @media #{$small-and-down} {
+            transform: translateY(-$navbar-height-mobile); //translation forcée pour se mettre sous la navbar taille mobile et collé au bord droit de l'affichage
+          }
         }
-      }
-
-      .dropdown-trigger{ // Gestion du bouton de trigger du dropdown
-        #bars{
-          line-height: inherit; // Ajustement de la hauteur de ligne automatique selon la taille de la navbar
-        }
-        &:hover{
-          background-color: none;
-        }
-      }
-      
-      .dropdown-content{ // Gestion des liens du menu dropdown
-        background-color: lighten($color: $perso-red, $amount: 5%);
-        width: max-content !important;
-        position: relative;
-        height:auto !important;
-        box-shadow: none;
-        transform: translateY(-$navbar-height); //translation forcée pour se mettre sous la navbar taille normale
-        
-        li:hover{
-          background-color: $perso-red;
-        }
-        
-        @media #{$small-and-down} {
-          transform: translateY(-$navbar-height-mobile); //translation forcée pour se mettre sous la navbar taille mobile et collé au bord droit de l'affichage
-        }
-      }
-    }   
+      }   
     /***/
 
     /**  SECTIONS  **/

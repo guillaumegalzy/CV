@@ -14276,40 +14276,21 @@ html {
 /** Organisation de la page **/
 /**  HEADER   **/
 header {
-  background-image: url("../img/header.jpg");
+  background-image: url("../img/header_filtered.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 35vh;
 }
-@media only screen and (max-width : 992px) {
-  header {
-    height: 25vh;
-  }
-}
 header h1 {
+  position: absolute;
+  top: 15%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
   font-family: "Raleway Heavy", sans-serif;
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 20;
-  padding-bottom: 2rem;
   color: #ffffff;
-  font-size: 2rem;
-}
-@media only screen and (min-width : 601px) {
-  header h1 {
-    font-size: 2.3rem;
-  }
-}
-@media only screen and (max-width : 992px) {
-  header h1 {
-    font-size: 2.3rem;
-  }
-}
-@media only screen and (max-width : 600px) {
-  header h1 {
-    font-size: 1.8rem;
-    text-shadow: red 10px 10px 5px 5px;
-  }
+  font-size: 2.3rem;
 }
 header svg {
   width: 100vw;
@@ -14317,34 +14298,16 @@ header svg {
   /** Animation du texte en SVG */
 }
 header svg text {
-  stroke-width: 2;
+  stroke-width: 1;
   /*? extrémités des bordures arrondies */
   stroke-linecap: round;
   /* */
   fill: transparent;
-  font-size: 110px;
+  font-size: 5.8rem;
   font-family: "Raleway Heavy", sans-serif;
   animation: textAnimate 3s ease-in-out;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
-}
-@media only screen and (min-width : 601px) {
-  header svg text {
-    font-size: 5.8rem;
-    stroke-width: 1;
-  }
-}
-@media only screen and (max-width : 992px) {
-  header svg text {
-    font-size: 5.8rem;
-    stroke-width: 1;
-  }
-}
-@media only screen and (max-width : 600px) {
-  header svg text {
-    font-size: 4.5rem;
-    stroke-width: 1;
-  }
 }
 @keyframes textAnimate {
   0% {
@@ -14364,11 +14327,43 @@ header svg text {
     stroke-dashoffset: 0%;
   }
 }
+@media only screen and (max-width : 992px) {
+  header {
+    height: 25vh;
+  }
+  header h1 {
+    font-size: 2.3rem;
+    position: absolute;
+    top: 10%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+  }
+  header svg text {
+    font-size: 5.8rem;
+    stroke-width: 1;
+  }
+}
+@media only screen and (max-width : 600px) {
+  header h1 {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 10%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+  }
+  header svg text {
+    font-size: 4.5rem;
+    stroke-width: 1;
+  }
+}
 
 /***/
 /**  NAVBAR   **/
 nav {
   z-index: 5;
+  background-color: #ff5656;
   width: 100%;
   font: "Montserrat Regular", sans-serif;
   font-variant: small-caps;
