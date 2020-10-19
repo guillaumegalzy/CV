@@ -14500,7 +14500,6 @@ section#Formation div .timeline li {
 section#Formation div .timeline li p:nth-child(1) {
   font-family: "Montserrat Regular", sans-serif;
   font-weight: bold;
-  margin-top: 35px;
 }
 section#Formation div .timeline li p:nth-child(2) {
   font-family: "Montserrat Light", sans-serif;
@@ -14509,8 +14508,11 @@ section#Formation div .timeline li p:nth-child(2) {
   color: #ff5656;
 }
 section#Formation div .timeline li:nth-child(even) {
-  transform: translateY(75px);
+  transform: translateY(65px);
   border-top: 3px solid #ff5656;
+}
+section#Formation div .timeline li:nth-child(even) p:nth-child(1) {
+  padding-top: 30px;
 }
 section#Formation div .timeline li:nth-child(even)::after {
   content: "";
@@ -14524,8 +14526,19 @@ section#Formation div .timeline li:nth-child(even)::after {
   border: solid 10px #ff5656;
   border-radius: 50%;
 }
+section#Formation div .timeline li:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 10%;
+  transform: translateX(-13px);
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-bottom: 13px solid #ff5656;
+}
 section#Formation div .timeline li:nth-child(odd) {
-  transform: translateY(-72px);
+  transform: translateY(-82px);
   border-bottom: 3px solid #ff5656;
 }
 section#Formation div .timeline li:nth-child(odd)::after {
@@ -14540,23 +14553,41 @@ section#Formation div .timeline li:nth-child(odd)::after {
   border: solid 10px #ff5656;
   border-radius: 50%;
 }
+section#Formation div .timeline li:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 10%;
+  transform: translateX(-13px);
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 13px solid #ff5656;
+}
 @media only screen and (max-width : 992px) {
   section#Formation div {
     margin: 10px 0px 10px 25px;
   }
   section#Formation div .timeline li {
     line-height: 100%;
-    height: 150px;
+    height: 120px;
     text-align: left;
+    padding-left: 30px;
   }
   section#Formation div .timeline li p {
     margin-top: 0px;
     margin-left: 20px;
   }
+  section#Formation div .timeline li:first-child {
+    margin-top: 10px;
+  }
   section#Formation div .timeline li:nth-child(even) {
     transform: translateY(0);
     border-top: none;
     border-left: 3px solid #ff5656;
+  }
+  section#Formation div .timeline li:nth-child(even) p:nth-child(1) {
+    padding-top: 0px;
   }
   section#Formation div .timeline li:nth-child(even)::after {
     content: "";
@@ -14564,15 +14595,28 @@ section#Formation div .timeline li:nth-child(odd)::after {
     left: 0;
     right: 10;
     top: 0;
-    transform: translateY(300%) translateX(-11px);
+    transform: translateY(110%) translateX(-11px);
     height: 10%;
     border: solid 10px #ff5656;
     border-radius: 50%;
+  }
+  section#Formation div .timeline li:nth-child(even)::before {
+    content: "";
+    position: absolute;
+    top: 16%;
+    left: 20px;
+    right: 100%;
+    border-right: 13px solid #ff5656;
+    border-bottom: 13px solid transparent;
+    border-top: 13px solid transparent;
   }
   section#Formation div .timeline li:nth-child(odd) {
     transform: translateY(0);
     border-bottom: none;
     border-left: 3px solid #ff5656;
+  }
+  section#Formation div .timeline li:nth-child(odd) p:nth-child(3) {
+    padding-bottom: 0px;
   }
   section#Formation div .timeline li:nth-child(odd)::after {
     content: "";
@@ -14580,10 +14624,20 @@ section#Formation div .timeline li:nth-child(odd)::after {
     left: 0;
     right: 10;
     top: 0;
-    transform: translateY(300%) translateX(-11px);
+    transform: translateY(100%) translateX(-11px);
     height: 10%;
     border: solid 10px #ff5656;
     border-radius: 50%;
+  }
+  section#Formation div .timeline li:nth-child(odd)::before {
+    content: "";
+    position: absolute;
+    bottom: 63%;
+    left: 20px;
+    right: 100%;
+    border-right: 13px solid #ff5656;
+    border-bottom: 13px solid transparent;
+    border-top: 13px solid transparent;
   }
 }
 section#Experience p {
@@ -14674,8 +14728,10 @@ section#Connaissances ul li img {
 section#Connaissances ul li img#JQUERY {
   height: 30px;
 }
-section#Connaissances ul li#Symfony {
-  margin-top: 20px;
+@media only screen and (max-width : 992px) {
+  section#Connaissances ul li#Symfony {
+    margin-top: 20px;
+  }
 }
 
 /**  FOOTER    **/
