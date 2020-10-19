@@ -14586,6 +14586,30 @@ section#Formation div .timeline li:nth-child(odd)::after {
     border-radius: 50%;
   }
 }
+section#Experience p {
+  margin-left: 2rem;
+}
+section#Experience p:nth-child(1) {
+  font-family: "Montserrat Regular", sans-serif;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+section#Experience p:nth-child(2) {
+  font-family: "Montserrat Regular", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0px 2rem;
+}
+section#Experience p em {
+  font-family: "Montserrat Light", sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #ff5656;
+}
+section#Experience p i {
+  color: #ff5656;
+  margin-right: 10px;
+}
 section#Connaissances ul {
   margin-left: 30px;
 }
